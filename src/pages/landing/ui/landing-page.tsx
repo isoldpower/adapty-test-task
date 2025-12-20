@@ -9,21 +9,27 @@ import { TestimonialsWidget } from "@widgets/landing/testimonials"
 import { PlatformBenefitsWidget } from "@widgets/landing/platform-benefits"
 import { RealCasesWidget } from "@widgets/landing/real-cases"
 import { FooterWidget } from "@widgets/landing/footer"
+import {AdaptyContainer, AdaptySection} from "@entities/landing/adapty-section";
 
 export function LandingPage() {
-  return (
-    <main className="min-h-screen">
-      <HeroWidget />
-      <TrustBadgesWidget />
-      <ProductContentsWidget />
-      <AchievementsWidget />
-      <SdkWidget />
-      <SdkPlatformsWidget />
-      <BenefitsWidget />
-      <TestimonialsWidget />
-      <PlatformBenefitsWidget />
-      <RealCasesWidget />
-      <FooterWidget />
-    </main>
-  )
+    return (
+        <main className="min-h-screen">
+            <HeroWidget/>
+            <TrustBadgesWidget/>
+            <ProductContentsWidget/>
+            <AchievementsWidget/>
+            <SdkWidget/>
+            <AdaptySection className="bg-[rgb(25,25,25)] py-0!">
+                <AdaptyContainer>
+                    <hr className='accent-a-white w-full opacity-10'/>
+                </AdaptyContainer>
+            </AdaptySection>
+            <SdkPlatformsWidget/>
+            <BenefitsWidget/>
+            <TestimonialsWidget/>
+            <PlatformBenefitsWidget/>
+            <RealCasesWidget/>
+            <FooterWidget/>
+        </main>
+    )
 }

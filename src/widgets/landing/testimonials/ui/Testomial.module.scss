@@ -1,0 +1,9 @@
+.testimonialWithMedia__grid {
+  display: grid;
+  grid-template-columns: 380px calc(100% - 380px - var(--space-xl));
+  gap: var(--space-xl);
+
+  &[aria-details='reversed'] {
+    grid-template-columns: calc(100% - 380px - var(--space-xl)) 380px;
+  }
+}

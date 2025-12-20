@@ -11,7 +11,7 @@ function AdaptySection({
     return (
         <section className={cn(
             className,
-            "py-xl px-s",
+            "py-xl px-s border-none",
             "xs:py-[calc(var(--section-space-s)+2px)] sm:px-[calc(var(--space-m)-4px)]",
             "sm:px-m",
             "lg:px-l",

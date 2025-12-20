@@ -543,6 +543,7 @@
     --color-a-bg-website: #ffffff;
     --color-a-bg-cold: rgb(250, 249, 252);
     --color-a-bg-warm: rgb(248, 244, 242);
+    --color-a-bg-accent: rgb(25, 25, 25);
 
     /* Font Sizes (Tailwind v4) */
     --font-size-xs: var(--text-xs);

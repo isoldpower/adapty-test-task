@@ -1,3 +1,5 @@
+import {cn} from "@shared/lib/utils.ts";
+
 interface ImageSource {
     media?: string;
     srcSet: string;
@@ -18,25 +20,27 @@ interface ResponsivePictureProps {
     fetchPriority?: 'high' | 'low' | 'auto';
     decoding?: 'async' | 'sync' | 'auto';
     draggable?: boolean;
+    style?: React.CSSProperties;
 }
 
 function ResponsivePicture({
-   sources,
-   src,
-   alt,
-   width,
-   height,
-   className = '',
-   pictureClassName = '',
-   pictureId,
-   imgId,
-   loading = 'lazy',
-   fetchPriority = 'auto',
-   decoding = 'async',
-   draggable = false
+    sources,
+    src,
+    alt,
+    width,
+    height,
+    className = '',
+    pictureClassName = '',
+    pictureId,
+    imgId,
+    loading = 'lazy',
+    fetchPriority = 'auto',
+    decoding = 'async',
+    draggable = false,
+    style
 }: ResponsivePictureProps) {
     return (
-        <picture className={pictureClassName} id={pictureId}>
+        <picture className={cn(pictureClassName, className)} id={pictureId}>
             {sources.map((source, index) => (
                 <source
                     key={index}
@@ -49,6 +53,7 @@ function ResponsivePicture({
                 id={imgId}
                 alt={alt}
                 className={className}
+                style={style}
                 decoding={decoding}
                 draggable={draggable}
                 fetchPriority={fetchPriority}

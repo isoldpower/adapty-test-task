@@ -1,101 +1,182 @@
-import { Container } from "@shared/ui-toolkit/container"
-import { BenefitCard } from "@entities/landing/benefit"
+import { AdaptyContainer, AdaptySection } from "@entities/landing/adapty-section";
+import { ArrowRight } from "lucide-react";
+import {TestimonialCard} from "@entities/landing/testimonial";
+import {TestimonialWithMedia} from "@widgets/landing/testimonials";
+import {ResponsivePicture} from "@entities/landing/responsive-picture";
 
 const BENEFITS = [
-  {
-    title: "Reduce Churn by 30%",
-    description:
-      "Smart retry logic and grace periods automatically recover failed payments, keeping your subscribers active and revenue flowing.",
-    testimonial: {
-      quote: "We reduced involuntary churn from 12% to 4% in just two months. The ROI was immediate.",
-      author: "Marcus Johnson",
-      role: "Head of Growth at FitnessPro",
-      avatar: "/professional-man-smiling.png",
+    {
+        media: {
+            width: 1280,
+            height: 960,
+            sources: [
+                { srcSet: "https://adapty.io/assets/uploads/2025/05/paywall-ab-testing@1.5x.webp", media: "(max-width: 358px)" },
+                { srcSet: "https://adapty.io/assets/uploads/2025/05/paywall-ab-testing@2x.webp", media: "(max-width: 767px)" },
+                { srcSet: "https://adapty.io/assets/uploads/2025/05/paywall-ab-testing@1.5x.webp", media: "(max-width: 991px)" },
+                { srcSet: "https://adapty.io/assets/uploads/2025/05/paywall-ab-testing@2x.webp" },
+            ],
+            alt: "Paywall A/B testing",
+            src: "https://adapty.io/assets/uploads/2025/05/paywall-ab-testing@2x.webp",
+            background: 'rgb(39, 97, 80)'
+        },
+        title: "Increase subscription revenue without app releases",
+        description: "Manage, target, localize and personalize paywalls without leaving your browser.",
+        cta: "Increase app revenue",
+        href: "https://adapty.io/paywall-ab-testing/",
+        testimonial: {
+            quote: "Whether it's A/B testing paywalls, predicting LTV, or analyzing subscription metrics, Adapty is the ultimate toolkit for app success.",
+            companyImg: "https://adapty.io/assets/uploads/2024/03/logo-smartist-black@2x.png",
+            author: "Ilgar Tali",
+            role: "Founder & Chief Vision Officer",
+            avatar: "https://adapty.io/assets/uploads/2024/02/Ilgar-Tali-Smartist@2x.webp",
+        },
     },
-    image: "/dashboard-showing-churn-reduction-metrics.jpg",
-  },
-  {
-    title: "Increase Revenue by 40%",
-    description:
-      "A/B test pricing, offers, and paywall designs in real-time. Data-driven optimization means more conversions and higher LTV.",
-    testimonial: {
-      quote:
-        "Our subscription revenue grew 40% after implementing dynamic pricing. The A/B testing framework is a game-changer.",
-      author: "Emily Rodriguez",
-      role: "CEO at LearnHub",
-      avatar: "/professional-woman-executive.png",
+    {
+        media: {
+            width: 768,
+            height: 576,
+            sources: [
+                { srcSet: "https://adapty.io/assets/uploads/2025/05/refund-rate@1.5x.webp", media: "(max-width: 358px)" },
+                { srcSet: "https://adapty.io/assets/uploads/2025/05/refund-rate@2x-1024x768.webp", media: "(max-width: 767px)" },
+                { srcSet: "https://adapty.io/assets/uploads/2025/05/refund-rate@1.5x.webp", media: "(max-width: 991px)" },
+                { srcSet: "https://adapty.io/assets/uploads/2025/05/refund-rate@2x-1024x768.webp" },
+            ],
+            alt: "Refund Rate",
+            src: "https://adapty.io/assets/uploads/2025/05/refund-rate@2x-768x576.webp",
+            background: 'rgb(207, 235, 227)'
+        },
+        title: "Cut refund rate by 40%",
+        description: "Stop losing revenue on refunds – Adapty automatically shares user activity data with Apple for refund requests and reduces it.",
+        cta: "Set up Refund Saver",
+        href: "https://adapty.io/refund-saver/",
+        testimonial: {
+            quote: "I never thought that doing something about refunds could make such a difference. We just flipped the switch, set it up, and suddenly, it felt like we stopped letting money slip away.",
+            companyImg: "https://adapty.io/assets/uploads/2024/12/app-icon-fotorama-original.webp",
+            appName: "Fotorama",
+            appDesc: "Photo and video",
+            author: "Berk Çağatay Albayrak",
+            role: "Sr. Product Manager",
+            avatar: "https://adapty.io/assets/uploads/2024/12/avatar-berk-cagatay-gray@3x.webp",
+        },
     },
-    image: "/revenue-growth-chart-with-a-b-testing-results.jpg",
-  },
-  {
-    title: "Launch Faster, Iterate Smarter",
-    description:
-      "Update paywalls, pricing, and offers without app releases. Make changes in the dashboard and see results instantly.",
-    testimonial: {
-      quote:
-        "We can now test new pricing strategies weekly instead of monthly. This agility gives us a huge competitive advantage.",
-      author: "David Kim",
-      role: "Product Lead at MeditateNow",
-      avatar: "/asian-professional-man.png",
+    {
+        media: {
+            width: 1280,
+            height: 960,
+            sources: [
+                { srcSet: "https://adapty.io/assets/uploads/2024/01/app-monetization-strategies.webp", media: "(max-width: 358px)" },
+                { srcSet: "https://adapty.io/assets/uploads/2024/01/app-monetization-strategies@2x.webp", media: "(max-width: 767px)" },
+                { srcSet: "https://adapty.io/assets/uploads/2024/01/app-monetization-strategies.webp", media: "(max-width: 991px)" },
+                { srcSet: "https://adapty.io/assets/uploads/2024/01/app-monetization-strategies@2x.webp" },
+            ],
+            alt: "App Monetization Strategies",
+            src: "https://adapty.io/assets/uploads/2024/01/app-monetization-strategies@2x.webp",
+            background: 'rgb(192, 175, 253)'
+        },
+        title: "Know your subscription numbers at any moment",
+        description: "Measure your in-app economy from trials to refunds with a ready-to-go, real-time subscription BI.",
+        cta: "See subscription BI",
+        href: "https://adapty.io/ltv-analytics/",
+        testimonial: {
+            quote: "Adapty's analytics provides invaluable insights into our app's performance. With detailed real-time metrics like revenue, ARPU, and churn rate, we make informed decisions to optimize our monetization strategy.",
+            companyImg: "https://adapty.io/assets/uploads/2023/12/app_icon_Moonly.svg",
+            appName: "Moonly",
+            appDesc: "Moon calendar app",
+            author: "Nikolay Chebotarev",
+            role: "Head of UA at Moonly.app",
+            avatar: "https://adapty.io/assets/uploads/2024/02/Nikolay.png",
+        },
     },
-    image: "/visual-paywall-builder-interface.jpg",
-  },
-  {
-    title: "Enterprise-Grade Security",
-    description:
-      "SOC 2 Type II certified, GDPR compliant, and PCI DSS ready. Your customers' data is protected with bank-level security.",
-    testimonial: {
-      quote:
-        "Security was our top concern. The compliance certifications and audit reports gave us complete confidence.",
-      author: "Rachel Foster",
-      role: "CTO at HealthTrack",
-      avatar: "/professional-woman-tech-executive.png",
+    {
+        media: {
+            width: 1280,
+            height: 960,
+            sources: [
+                { srcSet: "https://adapty.io/assets/uploads/2024/01/no-code-paywall-builder.webp", media: "(max-width: 358px)" },
+                { srcSet: "https://adapty.io/assets/uploads/2024/01/no-code-paywall-builder@2x-1024x768.webp", media: "(max-width: 767px)" },
+                { srcSet: "https://adapty.io/assets/uploads/2024/01/no-code-paywall-builder.webp", media: "(max-width: 991px)" },
+                { srcSet: "https://adapty.io/assets/uploads/2024/01/no-code-paywall-builder@2x.webp" },
+            ],
+            alt: "No Code Paywall Builder",
+            src: "https://adapty.io/assets/uploads/2024/01/no-code-paywall-builder@2x.webp",
+            background: 'rgb(255, 206, 199)'
+        },
+        title: "No-code paywall builder",
+        description: "Build beautiful native paywalls for iOS, Android, Flutter, and React Native without a dev team.",
+        cta: "Create paywalls within minutes",
+        href: "https://adapty.io/paywall-builder/",
+        testimonial: {
+            quote: "Adapty's Paywall Builder and A/B testing tools paired together are a game changer for anyone trying to do high-velocity testing and find quick wins.",
+            companyImg: "https://adapty.io/assets/uploads/2024/02/app-icon-cat.png",
+            appName: "Moodworks Inc",
+            appDesc: "Mental health apps",
+            author: "Mike McSweeney",
+            role: "Chief Product Officer",
+            avatar: "https://adapty.io/assets/uploads/2024/02/Mike-McSweeney-Moodworks-inc@2x.webp",
+        },
     },
-    image: "/security-compliance-badges-and-encryption.jpg",
-  },
-  {
-    title: "Seamless Migration Support",
-    description:
-      "Migrating from another provider? Our team handles the entire process with zero downtime and dedicated engineering support.",
-    testimonial: {
-      quote:
-        "The migration from our old system was surprisingly smooth. Their team handled everything, and we had zero downtime.",
-      author: "Alex Thompson",
-      role: "VP Engineering at StreamFit",
-      avatar: "/professional-man-glasses.png",
+    {
+        media: {
+            width: 768,
+            height: 631,
+            sources: [
+                { srcSet: "https://adapty.io/assets/uploads/2025/04/funnelfox-feature@1.5x.webp", media: "(max-width: 358px)" },
+                { srcSet: "https://adapty.io/assets/uploads/2025/04/funnelfox-feature@2x.webp", media: "(max-width: 767px)" },
+                { srcSet: "https://adapty.io/assets/uploads/2025/04/funnelfox-feature@1.5x.webp", media: "(max-width: 991px)" },
+                { srcSet: "https://adapty.io/assets/uploads/2025/04/funnelfox-feature@2x.webp" },
+            ],
+            alt: "FunnelFox",
+            src: "https://adapty.io/assets/uploads/2025/04/funnelfox-feature@2x-768x631.webp",
+            background: 'rgb(240,240,240)'
+        },
+        title: "Boost app revenue fast with web funnels",
+        description: "Build and launch web-to-app funnels, integrate payments, optimize with A/B testing and scale globally — all in one platform, no coding needed.",
+        cta: "Explore FunnelFox",
+        href: "https://funnelfox.com/",
+        testimonial: null,
     },
-    image: "/migration-process-diagram-with-checkmarks.jpg",
-    companyReference: {
-      name: "RevenueCat",
-      logo: "/revenuecat-logo.jpg",
-      description: "Switch from RevenueCat",
-    },
-  },
-]
+];
 
 export function BenefitsWidget() {
-  return (
-    <section className="py-16 sm:py-24 md:py-32">
-      <Container>
-        <div className="mb-16 text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Built for Growth</h2>
-          <p className="text-lg text-muted-foreground">Real results from real companies</p>
-        </div>
-
-        <div className="space-y-20">
-          {BENEFITS.map((benefit, index) => (
-            <BenefitCard
-              key={benefit.title}
-              title={benefit.title}
-              description={benefit.description}
-              testimonial={benefit.testimonial}
-              image={benefit.image}
-              companyReference={benefit.companyReference}
-              reversed={index % 2 === 1}
-            />
-          ))}
-        </div>
-      </Container>
-    </section>
-  )
+    return (
+        <AdaptySection className="bg-a-bg-website">
+            <AdaptyContainer>
+                <div className="flex flex-col gap-48">
+                    {BENEFITS.map((benefit, index) => (
+                        <TestimonialWithMedia
+                            key={index}
+                            reversed={index % 2 === 1}
+                            media={(
+                                <ResponsivePicture
+                                    style={{ backgroundColor: benefit.media.background, borderRadius: '12px' }}
+                                    {...benefit.media}
+                                />
+                            )}
+                            testimonial={(
+                                <div className='flex flex-col gap-4'>
+                                    <h2 className="flex flex-col text-3xl lg:mb-4 font-normal tracking-tight text-balance">
+                                        {benefit.title}
+                                    </h2>
+                                    <p className='text-lg lg:text-2xl leading-relaxed'>
+                                        {benefit.description}
+                                    </p>
+                                    <a className='flex gap-4 items-center text-2xl lg:text-2xl mb-6 font-bold' href={benefit.href}>
+                                        <span>{benefit.cta}</span>
+                                        <ArrowRight className="h-6 w-6" />
+                                    </a>
+                                    {benefit.testimonial ? (
+                                        <TestimonialCard
+                                            companyTitle={benefit.testimonial.appName}
+                                            companyDescription={benefit.testimonial.appDesc}
+                                            {...benefit.testimonial}
+                                        />
+                                    ): null}
+                                </div>
+                            )}
+                        />
+                    ))}
+                </div>
+            </AdaptyContainer>
+        </AdaptySection>
+    )
 }

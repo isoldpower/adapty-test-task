@@ -1,58 +1,76 @@
-import { Container } from "@shared/ui-toolkit/container"
 import { TestimonialCarousel } from "@features/landing/testimonial-carousel"
+import { AdaptyContainer, AdaptySection } from "@entities/landing/adapty-section";
 
 const CEO_TESTIMONIALS = [
-  {
-    quote:
-      "Within 3 months of switching, our MRR increased by 45%. The analytics alone are worth 10x what we pay. This platform is essential infrastructure for any subscription business.",
-    author: "Jennifer Martinez",
-    role: "CEO & Founder",
-    company: "YogaFlow",
-    avatar: "/woman-ceo-professional-portrait.jpg",
-    metrics: { label: "MRR Growth", value: "+45%" },
-  },
-  {
-    quote:
-      "The best investment we made this year. We recovered $120K in failed payments in Q1 alone. The platform paid for itself in the first month and continues to drive revenue growth.",
-    author: "Tom Williams",
-    role: "CEO",
-    company: "PodcastPro",
-    avatar: "/man-ceo-with-beard.jpg",
-    metrics: { label: "Recovered Revenue", value: "$120K" },
-  },
-  {
-    quote:
-      "As a developer-first company, we appreciate the quality of the SDKs and documentation. But what really impressed us was the A/B testing framework. We optimized our paywall and saw a 32% increase in conversions.",
-    author: "Priya Patel",
-    role: "Co-Founder & CEO",
-    company: "CodeLearn",
-    avatar: "/indian-woman-ceo-professional.jpg",
-    metrics: { label: "Conversion Rate", value: "+32%" },
-  },
-  {
-    quote:
-      "We were spending 40% of our engineering time maintaining subscription infrastructure. Now we focus on our product while this platform handles everything seamlessly. It's been transformational for our team.",
-    author: "Michael Chang",
-    role: "CEO & Co-Founder",
-    company: "SleepWell",
-    avatar: "/asian-man-ceo-smiling.jpg",
-    metrics: { label: "Time Saved", value: "40%" },
-  },
+    {
+        quote: "Migrating off RevenueCat was not an easy decision for us. We’ve chosen Adapty because we believe they are a better partner as we grow. Looking back it was the right call. Despite some hiccups, the Adapty team was always there to help us during the migration and afterward, and their support is top-notch. I recommend Adapty as a reliable partner.",
+        author: "Cem Ortabas",
+        role: "Co-founder and CEO, HubX",
+        logoSrc: "https://adapty.io/assets/uploads/2023/12/logo-HabX-white.svg",
+        avatar: {
+            src: "https://adapty.io/assets/uploads/2023/12/photo-Cem-Ortabas.webp",
+            height: 800,
+            width: 600,
+        }
+    },
+    {
+        quote: "We’ve been working with Adapty since 2021 and I couldn’t be happier about it. We’ve tried other subscription management platforms in the past so I can compare. Adapty introduced numerous features over the years and constantly helped us grow. They have the best analytics on the market and all the integrations you can think of. If you looking to boost the revenue of your app, I definitely recommend Adapty.",
+        author: "Chris Bick",
+        role: "Founder and CEO, Bickster",
+        logoSrc: "https://adapty.io/assets/uploads/2023/12/logo-HabX-white.svg",
+        avatar: {
+            src: "https://adapty.io/assets/uploads/2023/12/photo-Chris-Bick.webp",
+            height: 800,
+            width: 600,
+        }
+    },
+    {
+        quote: "We chose Adapty for its powerful paywall A/B testing capabilities, which helped us optimize our monetization strategy effectively. The user-friendly platform, flexible pricing, and exceptional customer support make Adapty a superior choice over competitors.",
+        author: "Yalçın Özdemir",
+        role: "Founder & CEO, AppNation",
+        logoSrc: "https://adapty.io/assets/uploads/2023/12/logo-HabX-white.svg",
+        avatar: {
+            src: "https://adapty.io/assets/uploads/2024/02/Asman.webp",
+            height: 800,
+            width: 600,
+        }
+    },
+    {
+        quote: "Adapty's platform makes it easy for non-developers to create and manage A/B tests, paywalls, product mix and pricing structure. They have a great external API that makes it easy to pass related events to other analytics tools like Amplitude and Mixpanel",
+        author: "Kyle Smith",
+        role: "Head of data at Smitten Dating",
+        logoSrc: "https://adapty.io/assets/uploads/2024/02/Smitten_Color-Logo-Small-02.webp",
+        avatar: {
+            src: "https://adapty.io/assets/uploads/2024/02/Kyle2.webp",
+            height: 800,
+            width: 600,
+        }
+    },
+    {
+        quote: "We’ve tested more than three hundred paywalls in the space of four months. Adapty allows testing basically any element of the paywall, and we took advantage of that. We’ve tested them all: products, title text, CTA buttons, images, videos etc. With Adapty’s A/B testing, we managed to double our monthly revenue. I wasn’t sure if one instrument could make such an impact, but I witnessed it myself.",
+        author: "Roi Mulia",
+        role: "Founder & CEO, SocialKit",
+        logoSrc: "https://adapty.io/assets/uploads/2024/02/logo-social-white.svg",
+        avatar: {
+            src: "https://adapty.io/assets/uploads/2023/12/photo-Roi-Mulia.webp",
+            height: 800,
+            width: 600,
+        }
+    }
 ]
 
 export function TestimonialsWidget() {
-  return (
-    <section className="border-y bg-gradient-to-b from-muted/30 via-background to-muted/30 py-20">
-      <Container>
-        <div className="mb-16 text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Loved by CEOs & Founders</h2>
-          <p className="text-lg text-muted-foreground">
-            Join thousands of companies growing their subscription revenue
-          </p>
-        </div>
-
-        <TestimonialCarousel testimonials={CEO_TESTIMONIALS} />
-      </Container>
-    </section>
-  )
+    return (
+        <AdaptySection className="bg-a-bg-accent">
+            <AdaptyContainer>
+                <div className="w-full text-center">
+                    <h2 className="text-accent-foreground flex flex-col items-center mb-4 font-normal tracking-tight text-balance">
+                        Developers from all kind of apps move to Adapty to grow their revenue
+                    </h2>
+                </div>
+                <hr className='accent-a-white w-full opacity-10 my-15'/>
+                <TestimonialCarousel testimonials={CEO_TESTIMONIALS}/>
+            </AdaptyContainer>
+        </AdaptySection>
+    );
 }

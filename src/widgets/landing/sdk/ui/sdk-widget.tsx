@@ -89,15 +89,15 @@ Adapty.makePurchase(product, (profile, error) => {
 
 export function SdkWidget() {
     return (
-        <AdaptySection className="bg-[rgb(25,25,25)]">
+        <AdaptySection className="bg-a-bg-accent">
             <AdaptyContainer>
                 <div className="w-full text-center mb-15">
                     <h2 className="text-accent-foreground flex flex-col items-center mb-4 font-normal tracking-tight text-balance">
                         Integrate in-app purchases with a few lines of code
                     </h2>
                 </div>
-
                 <TestimonialWithMedia
+                    breakEarly
                     media={(
                         <CodeBlock
                             tabs={SDK_PLATFORMS}
@@ -114,6 +114,7 @@ export function SdkWidget() {
                                 <ArrowRight className="h-6 w-6" />
                             </div>
                             <TestimonialCard
+                                negative
                                 quote="Adapty SDK made integrating in-app purchases a walk in the park. With just a few lines of code, I was able to implement subscriptions seamlessly for both iOS and Android."
                                 author="Magnús Ólafsson"
                                 role="Chief Technology Officer at Smitten"

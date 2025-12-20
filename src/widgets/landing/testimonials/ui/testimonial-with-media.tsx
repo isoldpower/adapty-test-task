@@ -5,20 +5,29 @@ interface TestimonialWithMediaProps {
     reversed?: boolean;
     media: React.ReactNode;
     testimonial: React.ReactNode;
+    breakEarly?: boolean;
 }
 
 function TestimonialWithMedia({
     reversed = false,
     testimonial,
-    media
+    media,
+    breakEarly = false
 }: TestimonialWithMediaProps) {
     return (
-        <div className={cn(classes.testimonialWithMedia__grid, "w-full")} aria-details={reversed ? 'reversed' : undefined}>
-            <div>
-                {reversed ? media : testimonial}
+        <div
+            className={cn(
+                classes.testimonialWithMedia__grid,
+                "w-full items-center",
+                breakEarly && classes.testimonialWithMedia__breakEarly,
+            )}
+            aria-details={reversed ? 'reversed' : undefined}
+        >
+            <div className={classes.first}>
+                {testimonial}
             </div>
-            <div>
-                {reversed ? testimonial : media}
+            <div className={classes.second}>
+                {media}
             </div>
         </div>
     )

@@ -19,7 +19,7 @@ export function LandingPage() {
             <ProductContentsWidget/>
             <AchievementsWidget/>
             <SdkWidget/>
-            <AdaptySection className="bg-[rgb(25,25,25)] py-0!">
+            <AdaptySection className="bg-a-bg-accent py-0!">
                 <AdaptyContainer>
                     <hr className='accent-a-white w-full opacity-10'/>
                 </AdaptyContainer>

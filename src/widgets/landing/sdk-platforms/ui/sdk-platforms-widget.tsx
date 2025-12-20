@@ -66,7 +66,7 @@ const SDK_REFERENCES = [
 
 export function SdkPlatformsWidget() {
     return (
-        <AdaptySection className="bg-[rgb(25,25,25)]">
+        <AdaptySection className="bg-a-bg-accent">
             <AdaptyContainer>
                 <div className="w-full text-center mb-15">
                     <h2 className="text-accent-foreground flex flex-col items-center mb-4 font-normal tracking-tight text-balance">

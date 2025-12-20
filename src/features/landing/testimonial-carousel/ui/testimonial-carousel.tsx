@@ -1,15 +1,18 @@
 import { useCallback, useState } from "react"
-import { Card } from "@shared/ui-toolkit/card"
-import { Button } from "@shared/ui-toolkit/button"
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import {ResponsivePicture} from "@entities/landing/responsive-picture";
+import {cn} from "@shared/lib/utils.ts";
 
 interface Testimonial {
-  quote: string
-  author: string
-  role: string
-  company: string
-  avatar: string
-  metrics: { label: string; value: string }
+    quote: string
+    author: string
+    role: string
+    logoSrc: string
+    avatar: {
+        src: string
+        height: number
+        width: number
+    }
 }
 
 interface TestimonialCarouselProps {
@@ -17,64 +20,100 @@ interface TestimonialCarouselProps {
 }
 
 export function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) {
-  const [currentIndex, setCurrentIndex] = useState(0)
+    const [currentIndex, setCurrentIndex] = useState(0);
 
-  const next = useCallback(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  }, [testimonials.length]);
-  const previous = useCallback(() => {
-      setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  }, [testimonials.length]);
+    const goToPrevious = useCallback(() => {
+        setCurrentIndex((prev) =>
+            prev === 0 ? testimonials.length - 1 : prev - 1
+        );
+    }, [testimonials.length]);
 
-  const current = testimonials[currentIndex]
+    const goToNext = useCallback(() => {
+        setCurrentIndex((prev) =>
+            prev === testimonials.length - 1 ? 0 : prev + 1
+        );
+    }, [testimonials.length]);
 
-  return (
-    <div className="relative">
-      <Card className="border-2 p-6 sm:p-8 md:p-12">
-        <Quote className="mb-6 h-12 w-12 text-accent/20" />
-        <blockquote className="mb-8 text-lg leading-relaxed sm:text-xl md:text-2xl">{current.quote}</blockquote>
-        <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
-          <div className="flex items-center gap-4">
-            <img
-              src={current.avatar || "/placeholder.svg"}
-              alt={current.author}
-              width={80}
-              height={80}
-              className="rounded-full"
-            />
-            <div>
-              <div className="font-semibold">{current.author}</div>
-              <div className="text-sm text-muted-foreground">{current.role}</div>
-              <div className="text-sm font-medium text-accent">{current.company}</div>
+    const goToSlide = (index: number) => {
+        setCurrentIndex(index);
+    };
+
+    return (
+        <div className="w-full min-h-[520px]">
+            <div className="mx-auto">
+                <div className="flex items-center gap-4 lg:gap-20">
+                    {/* Left Arrow */}
+                    <button
+                        onClick={goToPrevious}
+                        className="text-white hover:text-gray-300 transition-colors flex-shrink-0"
+                        aria-label="Previous testimonial"
+                    >
+                        <ChevronLeft className="w-14 h-14 lg:w-20 lg:h-20" strokeWidth={3}/>
+                    </button>
+
+                    {testimonials.map((testimonial, index) => (
+                        <div className={cn(
+                            "flex flex-col md:flex-row items-center gap-8 lg:gap-12 flex-1 ease-linear",
+                            index === currentIndex ? "opacity-100 relative" : "opacity-0 absolute pointer-events-none"
+                        )} key={index}>
+                            <div className="flex-shrink-0 w-full md:w-[300px] max-w-[480px] max-h-full">
+                                <ResponsivePicture
+                                    sources={[
+                                        { srcSet: testimonial.avatar.src, type: 'image/webp' },
+                                    ]}
+                                    src={testimonial.avatar.src}
+                                    alt={testimonial.author + "'s avatar"}
+                                    width={testimonial.avatar.width}
+                                    height={testimonial.avatar.height}
+                                    className="rounded-lg object-cover"
+                                />
+                            </div>
+
+                            <div className="flex flex-col items-start gap-8 w-full md:w-[calc(100%-300px)]">
+                                <p className="text-white text-[1.6rem] lg:text-2xl leading-relaxed">
+                                    "{testimonial.quote}"
+                                </p>
+                                <div>
+                                    <p className="text-white text-[1.6rem] lg:text-3xl font-semibold">
+                                        {testimonial.author}
+                                    </p>
+                                    <p className="text-gray-400">{testimonial.role}</p>
+                                </div>
+                                <img
+                                    src={testimonial.logoSrc}
+                                    alt="Company logo"
+                                    className="h-10 w-auto object-contain"
+                                />
+                            </div>
+                        </div>
+                    ))}
+
+                    {/* Right Arrow */}
+                    <button
+                        onClick={goToNext}
+                        className="text-white hover:text-gray-300 transition-colors flex-shrink-0"
+                        aria-label="Next testimonial"
+                    >
+                        <ChevronRight className="w-14 h-14 lg:w-20 lg:h-20" strokeWidth={3}/>
+                    </button>
+                </div>
+
+                {/* Pagination Dots */}
+                <div className="flex justify-center gap-3 mt-12">
+                    {testimonials.map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => { goToSlide(index); }}
+                            aria-label={`Go to testimonial ${(index + 1).toString()}`}
+                            className={`w-3 h-3 rounded-full transition-colors ${
+                                index === currentIndex
+                                    ? "bg-white"
+                                    : "bg-gray-600 hover:bg-gray-500"
+                            }`}
+                        />
+                    ))}
+                </div>
             </div>
-          </div>
-          <div className="rounded-lg bg-accent/10 px-6 py-3 text-center">
-            <div className="text-2xl font-bold text-accent">{current.metrics.value}</div>
-            <div className="text-sm text-muted-foreground">{current.metrics.label}</div>
-          </div>
         </div>
-      </Card>
-
-      <div className="mt-6 flex items-center justify-center gap-4">
-        <Button variant="outline" size="icon" onClick={previous} aria-label="Previous testimonial">
-          <ChevronLeft className="h-5 w-5" />
-        </Button>
-        <div className="flex gap-2">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => { setCurrentIndex(index); }}
-              className={`h-2 rounded-full transition-all ${
-                index === currentIndex ? "w-8 bg-accent" : "w-2 bg-muted-foreground/20"
-              }`}
-              aria-label={`Go to testimonial ${(index + 1).toString()}`}
-            />
-          ))}
-        </div>
-        <Button variant="outline" size="icon" onClick={next} aria-label="Next testimonial">
-          <ChevronRight className="h-5 w-5" />
-        </Button>
-      </div>
-    </div>
-  )
+    );
 }

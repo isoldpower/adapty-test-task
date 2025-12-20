@@ -1,42 +1,44 @@
 import { Card } from "@shared/ui-toolkit/card"
-import { Badge } from "@shared/ui-toolkit/badge"
 import { ArrowRight } from "lucide-react"
+import { Button } from "@shared/ui-toolkit";
 
 interface CaseStudyCardProps {
-  company: string
-  logo: string
-  industry: string
-  result: string
-  description: string
-  image: string
+    company: {
+        logo: string
+        name: string
+        category: string
+    }
+    result: string
+    description: string
+    href: string
 }
 
-export function CaseStudyCard({ company, logo, industry, result, description, image }: CaseStudyCardProps) {
-  return (
-    <a href="#">
-      <Card className="group overflow-hidden border-2 transition-all hover:border-accent hover:shadow-lg">
-        <div className="relative h-48 overflow-hidden bg-muted">
-          <img
-            src={image || "/placeholder.svg"}
-            alt={company}
-            width={400}
-            height={300}
-            className="h-full w-full object-cover transition-transform group-hover:scale-105"
-          />
-        </div>
-        <div className="p-6">
-          <div className="mb-3 flex items-center justify-between">
-            <img src={logo || "/placeholder.svg"} alt={company} width={100} height={30} className="h-6 w-auto" />
-            <Badge variant="secondary">{industry}</Badge>
-          </div>
-          <div className="mb-2 text-2xl font-bold text-accent">{result}</div>
-          <p className="mb-4 text-muted-foreground">{description}</p>
-          <div className="flex items-center gap-2 text-sm font-medium text-accent">
-            Read case study
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </div>
-        </div>
-      </Card>
-    </a>
-  )
+export function CaseStudyCard({
+    company,
+    href,
+    result,
+    description
+}: CaseStudyCardProps) {
+    return (
+        <Card className="flex flex-col justify-between overflow-hidden border-2 transition-all p-4">
+            <div className="flex gap-4">
+                <img
+                    src={company.logo}
+                    alt={company.name + " logo"}
+                    className="w-[48px] h-[48px] rounded-xl object-cover transition-transform group-hover:scale-105"
+                />
+                <div className="flex flex-col justify-center">
+                    <div className="text-2xl font-semibold text-accent">{company.name}</div>
+                    <div className="text-2xl text-muted-foreground">{company.category}</div>
+                </div>
+            </div>
+            <div className="text-3xl font-bold text-[#9eb8d1]">{result}</div>
+            <div className="text-2xl font-normal">{description}</div>
+            <Button variant='secondary' asChild className="text-2xl h-14">
+                <a href={href} target="_blank" rel="noopener noreferrer">
+                    Read more <ArrowRight className="ml-2 h-5 w-5"/>
+                </a>
+            </Button>
+        </Card>
+    )
 }

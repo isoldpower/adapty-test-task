@@ -1,69 +1,74 @@
-import { Container } from "@shared/ui-toolkit/container"
-import { Card } from "@shared/ui-toolkit/card"
-import { Shield, Zap, HeadphonesIcon, Award } from "lucide-react"
-import { Badge } from "@shared/ui-toolkit/badge"
+import { AdaptyContainer, AdaptySection } from "@entities/landing/adapty-section";
+import {cn} from "@shared/lib/utils.ts";
 
 const PLATFORM_FEATURES = [
-  {
-    icon: Shield,
-    title: "Secure",
-    description: "SOC 2 Type II certified with bank-level encryption. GDPR and CCPA compliant by default.",
-  },
-  {
-    icon: Zap,
-    title: "Reliable",
-    description: "99.99% uptime SLA with multi-region redundancy. Your revenue never sleeps.",
-  },
-  {
-    icon: HeadphonesIcon,
-    title: "Responsive",
-    description: "24/7 engineering support with <15 min response time for enterprise customers.",
-  },
-]
-
-const AWARDS = [
-  "G2 Leader 2024",
-  "Best Developer Tool 2024",
-  "Product Hunt #1 Product of the Day",
-  "TechCrunch Disrupt Winner",
-  "Apple Design Award Finalist",
-  "Fast Company Innovation Award",
+    {
+        title: "Secure",
+        labels: [
+            {label: "SOC2 verified"},
+            {label: "Encrypted"},
+            {label: "24/7 global fraud monitoring"}
+        ]
+    },
+    {
+        title: "Reliable",
+        labels: [
+            { label: "99.99% SLA", href: "https://status.adapty.io/?_ga=2.123025353.339646607.1672001945-1139331965.1672001945" },
+            { label: "Over $500M/year of in-app purchases processed" },
+        ]
+    },
+    {
+        title: "Responsive",
+        labels: [
+            { label: "Dedicated customer success manager" },
+            { label: "Direct communication via Slack" },
+            { label: "Live chat on the website" },
+            { label: "Four ways to reach us" },
+        ]
+    },
 ]
 
 export function PlatformBenefitsWidget() {
-  return (
-    <section className="py-16 sm:py-24 md:py-32">
-      <Container>
-        <div className="mb-16">
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {PLATFORM_FEATURES.map((feature) => {
-              const Icon = feature.icon
-              return (
-                <Card key={feature.title} className="border-2 p-8 text-center">
-                  <div className="mb-4 inline-flex rounded-full bg-accent/10 p-4">
-                    <Icon className="h-8 w-8 text-accent" />
-                  </div>
-                  <h3 className="mb-2 text-2xl font-bold">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </Card>
-              )
-            })}
-          </div>
-        </div>
-
-        <Card className="border-2 bg-gradient-to-br from-accent/5 to-purple-500/5 p-8 text-center sm:p-10 md:p-12">
-          <Award className="mx-auto mb-4 h-12 w-12 text-accent" />
-          <h3 className="mb-4 text-3xl font-bold">Award-Winning Platform</h3>
-          <p className="mb-8 text-muted-foreground">Recognized by industry leaders and loved by developers worldwide</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {AWARDS.map((award) => (
-              <Badge key={award} variant="secondary" className="px-4 py-2 text-sm font-medium">
-                {award}
-              </Badge>
-            ))}
-          </div>
-        </Card>
-      </Container>
-    </section>
-  )
-}
+    return (
+        <AdaptySection className="bg-a-bg-website">
+            <AdaptyContainer>
+                <div className="w-full text-left md:text-center mb-10">
+                    <h2 className="flex flex-col items-center mb-4 font-normal tracking-tight text-balance">
+                        Enterprise-grade platform
+                    </h2>
+                </div>
+                <div className="w-full grid grid-cols-1 gap-8 md:gap-0 md:grid-cols-3">
+                    {PLATFORM_FEATURES.map((feature) => (
+                        <div
+                            key={feature.title}
+                            className={cn(
+                                "flex flex-col gap-4 pl-12 py-6",
+                                "md:first:border-none border-l-2 border-purple-600"
+                            )}
+                        >
+                            <h3 className="text-5xl font-bold text-gray-900">{feature.title}</h3>
+                            <ul className="text-2xl flex flex-col gap-3">
+                                {feature.labels.map((item) => (
+                                    <li key={item.label} className="text-gray-700">
+                                        {item.href ? (
+                                            <a
+                                                href={item.href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="underline hover:text-gray-900 transition-colors"
+                                            >
+                                                {item.label}
+                                            </a>
+                                        ) : (
+                                            item.label
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+            </AdaptyContainer>
+        </AdaptySection>
+    );
+};

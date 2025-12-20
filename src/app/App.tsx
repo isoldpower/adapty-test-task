@@ -1,9 +1,14 @@
 import { Suspense } from "react";
-import { createRouter, RouterProvider } from "@tanstack/react-router";
+import { createHashHistory, createRouter, RouterProvider } from "@tanstack/react-router";
 
 import { routeTree } from "./routes/routeTree.gen.ts";
 
-const router = createRouter({ routeTree });
+const hashHistory = createHashHistory();
+const router = createRouter({
+    routeTree,
+    basepath: "/adapty-test-task",
+    history: hashHistory
+});
 
 function App() {
     return (

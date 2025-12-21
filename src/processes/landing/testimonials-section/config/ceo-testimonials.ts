@@ -1,7 +1,6 @@
-import { TestimonialCarousel } from "@features/landing/testimonial-carousel"
-import { AdaptyContainer, AdaptySection } from "@entities/landing/adapty-section";
+import type { CEOTestimonial } from "@widgets/landing/testimonials";
 
-const CEO_TESTIMONIALS = [
+const ceoTestimonials: CEOTestimonial[] = [
     {
         quote: "Migrating off RevenueCat was not an easy decision for us. We’ve chosen Adapty because we believe they are a better partner as we grow. Looking back it was the right call. Despite some hiccups, the Adapty team was always there to help us during the migration and afterward, and their support is top-notch. I recommend Adapty as a reliable partner.",
         author: "Cem Ortabas",
@@ -57,20 +56,6 @@ const CEO_TESTIMONIALS = [
             width: 600,
         }
     }
-]
+];
 
-export function TestimonialsWidget() {
-    return (
-        <AdaptySection className="bg-a-bg-accent">
-            <AdaptyContainer>
-                <div className="w-full text-center">
-                    <h2 className="text-accent-foreground flex flex-col items-center mb-4 font-normal tracking-tight text-balance">
-                        Developers from all kind of apps move to Adapty to grow their revenue
-                    </h2>
-                </div>
-                <hr className='accent-a-white w-full opacity-10 my-15'/>
-                <TestimonialCarousel testimonials={CEO_TESTIMONIALS}/>
-            </AdaptyContainer>
-        </AdaptySection>
-    );
-}
+export { ceoTestimonials };

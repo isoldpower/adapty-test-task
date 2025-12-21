@@ -1,20 +1,20 @@
 import type { BaseHTMLAttributes } from "react";
 import { cn } from "@shared/lib/utils.ts";
 
-type CenteredGroupProps = BaseHTMLAttributes<HTMLDivElement> & {
+type ItemsGroupProps = BaseHTMLAttributes<HTMLDivElement> & {
     orientation?: "vertical" | "horizontal";
 };
 
-function CenteredGroup({
+function ItemsGroup({
     children,
     className,
     orientation = "vertical",
     ...props
-}: CenteredGroupProps) {
+}: ItemsGroupProps) {
     return (
         <div
             className={cn(
-                "w-full flex items-center",
+                "w-full flex items-start",
                 orientation === "vertical" ? "flex-col" : "flex-row",
                 className
             )}
@@ -25,5 +25,5 @@ function CenteredGroup({
     );
 }
 
-export { CenteredGroup };
-export type { CenteredGroupProps };
+export { ItemsGroup };
+export type { ItemsGroupProps };

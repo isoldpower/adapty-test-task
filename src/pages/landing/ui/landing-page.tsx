@@ -1,6 +1,4 @@
 import { AdaptyContainer, AdaptySection } from "@entities/landing/adapty-section";
-import { BenefitsWidget } from "@widgets/landing/benefits"
-import { TestimonialsWidget } from "@widgets/landing/testimonials"
 import { PlatformBenefitsWidget } from "@widgets/landing/platform-benefits"
 import { RealCasesWidget } from "@widgets/landing/real-cases"
 import { FooterWidget } from "@widgets/landing/footer"
@@ -9,6 +7,8 @@ import { TrustBadgesSection } from "@processes/landing/trust-badges-section";
 import { ProductContentsSection } from "@processes/landing/product-contents";
 import { AchievementsSection } from "@processes/landing/achievements";
 import { SDKPlatformsList, SDKIntegrationSection } from "@processes/landing/sdk-integration";
+import { ProductBenefitsSection } from "@processes/landing/benefits-section";
+import { CEOTestimonialsSection } from "@processes/landing/testimonials-section";
 
 
 export function LandingPage() {
@@ -49,8 +49,16 @@ export function LandingPage() {
                     <SDKPlatformsList />
                 </AdaptyContainer>
             </AdaptySection>
-            <BenefitsWidget />
-            <TestimonialsWidget />
+            <AdaptySection variant='default'>
+                <AdaptyContainer>
+                    <ProductBenefitsSection />
+                </AdaptyContainer>
+            </AdaptySection>
+            <AdaptySection variant='accent'>
+                <AdaptyContainer>
+                    <CEOTestimonialsSection />
+                </AdaptyContainer>
+            </AdaptySection>
             <PlatformBenefitsWidget />
             <RealCasesWidget />
             <FooterWidget />

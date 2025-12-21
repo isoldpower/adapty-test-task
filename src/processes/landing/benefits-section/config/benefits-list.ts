@@ -1,12 +1,30 @@
-import { ArrowRight } from "lucide-react";
+import type { ImageSource } from "@entities/landing/responsive-picture";
 
-import { AdaptyContainer, AdaptySection } from "@entities/landing/adapty-section";
-import { ResponsivePicture } from "@entities/landing/responsive-picture";
-import { TestimonialCard } from "@widgets/landing/testimonials";
-import { TextAndMediaGroup } from "@entities/landing/containers";
+interface BenefitItem {
+    media: {
+        width: number;
+        height: number;
+        sources: ImageSource[];
+        alt: string;
+        src: string;
+        background: string;
+    }
+    title: string;
+    description: string;
+    cta: string;
+    href: string;
+    testimonial: {
+        appName?: string;
+        appDesc?: string;
+        quote: string;
+        companyImg: string;
+        author: string;
+        role: string;
+        avatar: string;
+    } | null
+}
 
-
-const BENEFITS = [
+const benefitsList: BenefitItem[] = [
     {
         media: {
             width: 1280,
@@ -139,40 +157,5 @@ const BENEFITS = [
     },
 ];
 
-export function BenefitsWidget() {
-    return (
-        <AdaptySection className="bg-a-bg-website">
-            <AdaptyContainer>
-                <div className="flex flex-col gap-48">
-                    {BENEFITS.map((benefit, index) => (
-                        <TextAndMediaGroup key={index} reversed={index % 2 === 1}>
-                            <div className='flex flex-col gap-4'>
-                                <h2 className="flex flex-col text-3xl lg:mb-4 font-normal tracking-tight text-balance">
-                                    {benefit.title}
-                                </h2>
-                                <p className='text-lg lg:text-2xl leading-relaxed'>
-                                    {benefit.description}
-                                </p>
-                                <a className='flex gap-4 items-center text-2xl lg:text-2xl mb-6 font-bold' href={benefit.href}>
-                                    <span>{benefit.cta}</span>
-                                    <ArrowRight className="h-6 w-6" />
-                                </a>
-                                {benefit.testimonial ? (
-                                    <TestimonialCard
-                                        companyTitle={benefit.testimonial.appName}
-                                        companyDescription={benefit.testimonial.appDesc}
-                                        {...benefit.testimonial}
-                                    />
-                                ): null}
-                            </div>
-                            <ResponsivePicture
-                                style={{ backgroundColor: benefit.media.background, borderRadius: '12px' }}
-                                {...benefit.media}
-                            />
-                        </TextAndMediaGroup>
-                    ))}
-                </div>
-            </AdaptyContainer>
-        </AdaptySection>
-    )
-}
+export { benefitsList };
+export type { BenefitItem };

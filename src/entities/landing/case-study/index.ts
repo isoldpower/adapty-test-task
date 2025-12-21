@@ -1,1 +1,1 @@
-export { CaseStudyCard } from "./ui/case-study-card"
+export { CompanyLogo } from "./ui/company-logo.tsx";

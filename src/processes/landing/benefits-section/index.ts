@@ -1,0 +1,1 @@
+export { ProductBenefitsSection } from './ui/product-benefits-section.tsx';

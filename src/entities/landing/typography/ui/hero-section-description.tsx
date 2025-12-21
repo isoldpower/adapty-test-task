@@ -9,7 +9,7 @@ function HeroSectionDescription({
     ...props
 }: HeroSectionDescriptionProps) {
     return (
-        <p className={cn("mb-10 text-pretty text-3xl font-medium text-muted-foreground", className)} {...props}>
+        <p className={cn("text-pretty text-3xl font-medium text-muted-foreground", className)} {...props}>
             {children}
         </p>
     )

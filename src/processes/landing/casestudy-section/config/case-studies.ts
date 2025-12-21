@@ -1,9 +1,4 @@
-import { CaseStudyCard } from "@entities/landing/case-study"
-import { Button } from "@shared/ui-toolkit/button"
-import { ArrowRight } from "lucide-react"
-import { AdaptyContainer, AdaptySection } from "@entities/landing/adapty-section";
-
-const CASE_STUDIES = [
+const caseStudies = [
     {
         company: {
             logo: "https://adapty.io/assets/uploads/2025/12/app-icon-productivity-app@4x.webp",
@@ -96,27 +91,4 @@ const CASE_STUDIES = [
     },
 ];
 
-export function RealCasesWidget() {
-    return (
-        <AdaptySection className="bg-a-bg-website">
-            <AdaptyContainer className="items-center">
-                <div className="w-full text-left md:text-center mb-10">
-                    <h2 className="flex flex-col items-center mb-4 font-normal tracking-tight text-balance">
-                        Read the real cases of our customers
-                    </h2>
-                </div>
-                <div className="w-full mb-12 grid gap-6  sm:grid-cols-2 lg:grid-cols-3">
-                    {CASE_STUDIES.map((caseStudy) => (
-                        <CaseStudyCard key={caseStudy.company.name} {...caseStudy} />
-                    ))}
-                </div>
-                <div className="text-center">
-                    <Button size="lg" variant="link" className="gap-2 bg-transparent text-2xl">
-                        Read all cases
-                        <ArrowRight className="h-5 w-5"/>
-                    </Button>
-                </div>
-            </AdaptyContainer>
-        </AdaptySection>
-    )
-}
+export { caseStudies };

@@ -13,7 +13,7 @@ function LandingHeroSection() {
                 <HeroSectionTitle>
                     Revenue management for in-app purchases
                 </HeroSectionTitle>
-                <HeroSectionDescription>
+                <HeroSectionDescription className="mb-10">
                     Save months on integrating subscriptions and double your app revenue with paywall management.
                 </HeroSectionDescription>
                 <InlineGroup breakpoint='lg'>

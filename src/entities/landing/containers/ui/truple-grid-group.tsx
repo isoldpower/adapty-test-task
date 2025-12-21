@@ -3,7 +3,7 @@ import { cn } from "@shared/lib/utils.ts";
 
 type Breakpoints = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'all' | 'none';
 
-type EvenGridGroupProps = BaseHTMLAttributes<HTMLDivElement> & {
+type TrupleGridGroupProps = BaseHTMLAttributes<HTMLDivElement> & {
     firstBreakpoint?: Breakpoints;
     secondBreakpoint?: Breakpoints;
 };
@@ -19,23 +19,23 @@ const breakpointClasses: Record<'first' | 'second', Record<Breakpoints, string>>
         all: 'grid-cols-2',
     },
     second: {
-        sm: 'sm:grid-cols-4',
-        md: 'md:grid-cols-4',
-        lg: 'lg:grid-cols-4',
-        xl: 'xl:grid-cols-4',
-        '2xl': '2xl:grid-cols-4',
+        sm: 'sm:grid-cols-3',
+        md: 'md:grid-cols-3',
+        lg: 'lg:grid-cols-3',
+        xl: 'xl:grid-cols-3',
+        '2xl': '2xl:grid-cols-3',
         none: '',
-        all: 'grid-cols-4',
+        all: 'grid-cols-3',
     },
 }
 
-function EvenGridGroup({
+function TrupleGridGroup({
     children,
     className,
     firstBreakpoint = 'sm',
     secondBreakpoint = 'md',
     ...props
-}: EvenGridGroupProps) {
+}: TrupleGridGroupProps) {
     return (
         <div
             className={cn(
@@ -51,5 +51,5 @@ function EvenGridGroup({
     );
 }
 
-export { EvenGridGroup };
-export type { EvenGridGroupProps };
+export { TrupleGridGroup };
+export type { TrupleGridGroupProps };

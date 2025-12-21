@@ -1,6 +1,4 @@
 import { AdaptyContainer, AdaptySection } from "@entities/landing/adapty-section";
-import { PlatformBenefitsWidget } from "@widgets/landing/platform-benefits"
-import { RealCasesWidget } from "@widgets/landing/real-cases"
 import { FooterWidget } from "@widgets/landing/footer"
 import { LandingHeroSection } from "@processes/landing/hero-section";
 import { TrustBadgesSection } from "@processes/landing/trust-badges-section";
@@ -9,6 +7,8 @@ import { AchievementsSection } from "@processes/landing/achievements";
 import { SDKPlatformsList, SDKIntegrationSection } from "@processes/landing/sdk-integration";
 import { ProductBenefitsSection } from "@processes/landing/benefits-section";
 import { CEOTestimonialsSection } from "@processes/landing/testimonials-section";
+import { EnterpriseSection } from "@processes/landing/enterprise-section";
+import { CaseStudySection } from "@processes/landing/casestudy-section";
 
 
 export function LandingPage() {
@@ -59,9 +59,21 @@ export function LandingPage() {
                     <CEOTestimonialsSection />
                 </AdaptyContainer>
             </AdaptySection>
-            <PlatformBenefitsWidget />
-            <RealCasesWidget />
-            <FooterWidget />
+            <AdaptySection variant='default'>
+                <AdaptyContainer>
+                    <EnterpriseSection />
+                </AdaptyContainer>
+            </AdaptySection>
+            <AdaptySection variant='default'>
+                <AdaptyContainer>
+                    <CaseStudySection />
+                </AdaptyContainer>
+            </AdaptySection>
+            <AdaptySection variant='accent' className="pb-12!">
+                <AdaptyContainer>
+                    <FooterWidget />
+                </AdaptyContainer>
+            </AdaptySection>
         </>
     );
 }

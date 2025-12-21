@@ -137,131 +137,127 @@ function AdaptyLogo({ className }: { className?: string }) {
 
 export function FooterWidget() {
     return (
-        <AdaptySection className="bg-a-bg-accent">
-            <AdaptyContainer>
-                <footer className="w-full text-white">
-                    <div className="mx-auto px-6 py-12">
-                        <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
-                            <h2 className="text-2xl font-semibold leading-tight md:text-3xl">
-                                Get started today or schedule a demo
-                                <br />
-                                for your personal onboarding
-                            </h2>
-                            <div className="flex flex-wrap gap-4">
-                                <Button
-                                    variant="outline"
-                                    className="border-white bg-transparent px-8 py-6 text-white hover:bg-white hover:text-black"
-                                >
-                                    START FOR FREE
-                                </Button>
-                                <Button className="bg-purple-600 px-8 py-6 hover:bg-purple-700">
-                                    SCHEDULE A DEMO
-                                </Button>
-                            </div>
-                        </div>
+        <footer className="w-full text-white">
+            <div className="mx-auto px-6 py-12">
+                <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
+                    <h2 className="text-2xl font-semibold leading-tight md:text-3xl">
+                        Get started today or schedule a demo
+                        <br />
+                        for your personal onboarding
+                    </h2>
+                    <div className="flex flex-wrap gap-4">
+                        <Button
+                            variant="outline"
+                            className="border-white bg-transparent px-8 py-6 text-white hover:bg-white hover:text-black"
+                        >
+                            START FOR FREE
+                        </Button>
+                        <Button className="bg-purple-600 px-8 py-6 hover:bg-purple-700">
+                            SCHEDULE A DEMO
+                        </Button>
                     </div>
+                </div>
+            </div>
 
-                    {/* Divider */}
-                    <div className="mx-auto px-6">
-                        <div className="h-px bg-gray-700" />
-                    </div>
+            {/* Divider */}
+            <div className="mx-auto px-6">
+                <div className="h-px bg-gray-700" />
+            </div>
 
-                    {/* Logo and Social Links */}
-                    <div className="mx-auto px-6 py-8">
-                        <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
-                            <a href="/" className="flex items-center gap-2">
-                                <AdaptyLogo className="w-[138px] h-[38px]" />
+            {/* Logo and Social Links */}
+            <div className="mx-auto px-6 py-8">
+                <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
+                    <a href="/" className="flex items-center gap-2">
+                        <AdaptyLogo className="w-[138px] h-[38px]" />
+                    </a>
+                    <div className="flex items-center gap-8">
+                        {socialLinks.map((social) => (
+                            <a
+                                key={social.label}
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-gray-400 transition-colors text-white"
+                                aria-label={social.label}
+                            >
+                                <social.icon className="h-10 w-10" />
                             </a>
-                            <div className="flex items-center gap-8">
-                                {socialLinks.map((social) => (
-                                    <a
-                                        key={social.label}
-                                        href={social.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="hover:text-gray-400 transition-colors text-white"
-                                        aria-label={social.label}
-                                    >
-                                        <social.icon className="h-10 w-10" />
-                                    </a>
-                                ))}
-                            </div>
-                        </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+
+            {/* Divider */}
+            <div className="mx-auto px-6 mb-8">
+                <div className="h-px bg-gray-700" />
+            </div>
+
+            {/* Links Grid */}
+            <div className="mx-auto px-6 pb-12">
+                <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                    {/* Column 1 */}
+                    <div className="space-y-8">
+                        <FooterLinkGroup
+                            title="Paywall management"
+                            links={footerLinks["Paywall management"]}
+                        />
+                        <FooterLinkGroup
+                            title="Infrastructure"
+                            links={footerLinks.Infrastructure}
+                        />
                     </div>
 
-
-                    {/* Divider */}
-                    <div className="mx-auto px-6 mb-8">
-                        <div className="h-px bg-gray-700" />
+                    {/* Column 2 */}
+                    <div className="space-y-8">
+                        <FooterLinkGroup title="Roles" links={footerLinks.Roles} />
+                        <FooterLinkGroup title="Stages" links={footerLinks.Stages} />
+                        <FooterLinkGroup title="Cases" links={footerLinks.Cases} />
                     </div>
 
-                    {/* Links Grid */}
-                    <div className="mx-auto px-6 pb-12">
-                        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                            {/* Column 1 */}
-                            <div className="space-y-8">
-                                <FooterLinkGroup
-                                    title="Paywall management"
-                                    links={footerLinks["Paywall management"]}
-                                />
-                                <FooterLinkGroup
-                                    title="Infrastructure"
-                                    links={footerLinks.Infrastructure}
-                                />
-                            </div>
-
-                            {/* Column 2 */}
-                            <div className="space-y-8">
-                                <FooterLinkGroup title="Roles" links={footerLinks.Roles} />
-                                <FooterLinkGroup title="Stages" links={footerLinks.Stages} />
-                                <FooterLinkGroup title="Cases" links={footerLinks.Cases} />
-                            </div>
-
-                            {/* Column 3 */}
-                            <div className="space-y-8">
-                                <FooterLinkGroup
-                                    title="Migrate from"
-                                    links={footerLinks["Migrate from"]}
-                                />
-                                <FooterLinkGroup title="SDK" links={footerLinks.SDK} />
-                            </div>
-
-                            {/* Column 4 */}
-                            <div>
-                                <FooterLinkGroup
-                                    title="Resources"
-                                    links={footerLinks.Resources}
-                                />
-                            </div>
-
-                            {/* Column 5 */}
-                            <div className="space-y-8">
-                                <FooterLinkGroup
-                                    title="Analytics"
-                                    links={footerLinks.Analytics}
-                                />
-                                <FooterLinkGroup title="Company" links={footerLinks.Company} />
-                            </div>
-                        </div>
+                    {/* Column 3 */}
+                    <div className="space-y-8">
+                        <FooterLinkGroup
+                            title="Migrate from"
+                            links={footerLinks["Migrate from"]}
+                        />
+                        <FooterLinkGroup title="SDK" links={footerLinks.SDK} />
                     </div>
 
-                    {/* Bottom Bar */}
-                    <div className="mx-auto px-6 pb-8">
-                        <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-                            <p className="text-sm text-gray-500">© 2025 Adapty Tech Inc.</p>
-                            <Select>
-                                <SelectTrigger>
-                                    <span className="text-sm text-gray-500">Language: English</span>
-                                </SelectTrigger>
-                                <SelectContent>
-                                    <SelectItem value={"en"}>English</SelectItem>
-                                </SelectContent>
-                            </Select>
-                        </div>
+                    {/* Column 4 */}
+                    <div>
+                        <FooterLinkGroup
+                            title="Resources"
+                            links={footerLinks.Resources}
+                        />
                     </div>
-                </footer>
-            </AdaptyContainer>
-        </AdaptySection>
+
+                    {/* Column 5 */}
+                    <div className="space-y-8">
+                        <FooterLinkGroup
+                            title="Analytics"
+                            links={footerLinks.Analytics}
+                        />
+                        <FooterLinkGroup title="Company" links={footerLinks.Company} />
+                    </div>
+                </div>
+            </div>
+
+            {/* Bottom Bar */}
+            <div className="mx-auto px-6 pb-8">
+                <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+                    <p className="text-sm text-gray-500">© 2025 Adapty Tech Inc.</p>
+                    <Select>
+                        <SelectTrigger>
+                            <span className="text-sm text-gray-500">Language: English</span>
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value={"en"}>English</SelectItem>
+                        </SelectContent>
+                    </Select>
+                </div>
+            </div>
+        </footer>
     );
 };
 

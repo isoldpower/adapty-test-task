@@ -1,4 +1,3 @@
-import { TrustBadgesWidget } from "@widgets/landing/trust-badges"
 import { ProductContentsWidget } from "@widgets/landing/product-contents"
 import { AchievementsWidget } from "@widgets/landing/achievements"
 import { SdkWidget } from "@widgets/landing/sdk"
@@ -10,6 +9,7 @@ import { RealCasesWidget } from "@widgets/landing/real-cases"
 import { FooterWidget } from "@widgets/landing/footer"
 import { AdaptyContainer, AdaptySection } from "@entities/landing/adapty-section";
 import { LandingHeroSection } from "@processes/landing/hero-section";
+import { TrustBadgesSection } from "@processes/landing/trust-badges-section";
 
 export function LandingPage() {
     return (
@@ -19,7 +19,11 @@ export function LandingPage() {
                     <LandingHeroSection />
                 </AdaptyContainer>
             </AdaptySection>
-            <TrustBadgesWidget />
+            <AdaptySection variant='warm'>
+                <AdaptyContainer>
+                    <TrustBadgesSection />
+                </AdaptyContainer>
+            </AdaptySection>
             <ProductContentsWidget />
             <AchievementsWidget />
             <SdkWidget />

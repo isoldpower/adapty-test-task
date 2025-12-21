@@ -1,0 +1,1 @@
+export { TrustedCompanyHover } from './ui/trusted-company-hover.tsx';

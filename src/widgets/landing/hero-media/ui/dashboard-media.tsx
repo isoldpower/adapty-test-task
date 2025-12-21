@@ -1,29 +1,8 @@
 import { ResponsivePicture } from "@entities/landing/responsive-picture";
-import {cn} from "@shared/lib/utils.ts";
+import { cn } from "@shared/lib/utils.ts";
+import { overviewSources } from "../config/media-sources";
 
 function HeroOverviewMedia() {
-    const overviewSources = [
-        {
-            media: '(max-width: 432px)',
-            srcSet: 'https://adapty.io/assets/uploads/2025/02/adapty-overview@1x.webp'
-        },
-        {
-            media: '(max-width: 575px)',
-            srcSet: 'https://adapty.io/assets/uploads/2025/02/adapty-overview@1.5x.webp'
-        },
-        {
-            media: '(max-width: 767px)',
-            srcSet: 'https://adapty.io/assets/uploads/2025/02/adapty-overview@1.5x.webp'
-        },
-        {
-            media: '(max-width: 991px)',
-            srcSet: 'https://adapty.io/assets/uploads/2025/02/adapty-overview@1.5x.webp'
-        },
-        {
-            srcSet: 'https://adapty.io/assets/uploads/2025/02/adapty-overview@2x.webp'
-        },
-    ];
-
     return (
         <div className={cn(
             "relative origin-left scale-100 translate-x-[21vw]",

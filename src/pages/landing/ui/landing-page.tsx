@@ -1,5 +1,4 @@
 import { AdaptyContainer, AdaptySection } from "@entities/landing/adapty-section";
-import { FooterWidget } from "@widgets/landing/footer"
 import { LandingHeroSection } from "@processes/landing/hero-section";
 import { TrustBadgesSection } from "@processes/landing/trust-badges-section";
 import { ProductContentsSection } from "@processes/landing/product-contents";
@@ -9,6 +8,7 @@ import { ProductBenefitsSection } from "@processes/landing/benefits-section";
 import { CEOTestimonialsSection } from "@processes/landing/testimonials-section";
 import { EnterpriseSection } from "@processes/landing/enterprise-section";
 import { CaseStudySection } from "@processes/landing/casestudy-section";
+import { FooterSection } from "@processes/landing/footer-section";
 
 
 export function LandingPage() {
@@ -71,7 +71,7 @@ export function LandingPage() {
             </AdaptySection>
             <AdaptySection variant='accent' className="pb-12!">
                 <AdaptyContainer>
-                    <FooterWidget />
+                    <FooterSection />
                 </AdaptyContainer>
             </AdaptySection>
         </>

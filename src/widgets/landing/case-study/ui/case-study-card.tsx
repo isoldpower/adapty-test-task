@@ -59,4 +59,4 @@ function CaseStudyCard({
 }
 
 export { CaseStudyCard };
-export type { CaseStudyCardProps, CaseStudyCard };
+export type { CaseStudyCardProps };

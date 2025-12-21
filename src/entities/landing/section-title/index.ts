@@ -1,1 +1,0 @@
-export { HeroSectionTitle } from './ui/hero-section-title.tsx';

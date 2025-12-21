@@ -1,0 +1,1 @@
+export { RedirectToEbook } from './ui/redirect-to-ebook.tsx';

@@ -1,4 +1,3 @@
-import { HeroWidget } from "@widgets/landing/hero"
 import { TrustBadgesWidget } from "@widgets/landing/trust-badges"
 import { ProductContentsWidget } from "@widgets/landing/product-contents"
 import { AchievementsWidget } from "@widgets/landing/achievements"
@@ -9,27 +8,32 @@ import { TestimonialsWidget } from "@widgets/landing/testimonials"
 import { PlatformBenefitsWidget } from "@widgets/landing/platform-benefits"
 import { RealCasesWidget } from "@widgets/landing/real-cases"
 import { FooterWidget } from "@widgets/landing/footer"
-import {AdaptyContainer, AdaptySection} from "@entities/landing/adapty-section";
+import { AdaptyContainer, AdaptySection } from "@entities/landing/adapty-section";
+import { LandingHeroSection } from "@processes/landing/hero-section";
 
 export function LandingPage() {
     return (
         <main className="min-h-screen">
-            <HeroWidget/>
-            <TrustBadgesWidget/>
-            <ProductContentsWidget/>
-            <AchievementsWidget/>
-            <SdkWidget/>
-            <AdaptySection className="bg-a-bg-accent py-0!">
+            <AdaptySection variant='warm'>
+                <AdaptyContainer>
+                    <LandingHeroSection />
+                </AdaptyContainer>
+            </AdaptySection>
+            <TrustBadgesWidget />
+            <ProductContentsWidget />
+            <AchievementsWidget />
+            <SdkWidget />
+            <AdaptySection variant='accent' className="py-0!">
                 <AdaptyContainer>
                     <hr className='accent-a-white w-full opacity-10'/>
                 </AdaptyContainer>
             </AdaptySection>
-            <SdkPlatformsWidget/>
-            <BenefitsWidget/>
-            <TestimonialsWidget/>
-            <PlatformBenefitsWidget/>
-            <RealCasesWidget/>
-            <FooterWidget/>
+            <SdkPlatformsWidget />
+            <BenefitsWidget />
+            <TestimonialsWidget />
+            <PlatformBenefitsWidget />
+            <RealCasesWidget />
+            <FooterWidget />
         </main>
     )
 }

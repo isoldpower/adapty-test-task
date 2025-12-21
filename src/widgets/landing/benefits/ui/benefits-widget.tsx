@@ -1,8 +1,10 @@
-import { AdaptyContainer, AdaptySection } from "@entities/landing/adapty-section";
 import { ArrowRight } from "lucide-react";
-import {TestimonialCard} from "@entities/landing/testimonial";
-import {TestimonialWithMedia} from "@widgets/landing/testimonials";
-import {ResponsivePicture} from "@entities/landing/responsive-picture";
+
+import { AdaptyContainer, AdaptySection } from "@entities/landing/adapty-section";
+import { ResponsivePicture } from "@entities/landing/responsive-picture";
+import { TestimonialCard } from "@widgets/landing/testimonials";
+import { TextAndMediaGroup } from "@entities/landing/containers";
+
 
 const BENEFITS = [
     {
@@ -143,37 +145,31 @@ export function BenefitsWidget() {
             <AdaptyContainer>
                 <div className="flex flex-col gap-48">
                     {BENEFITS.map((benefit, index) => (
-                        <TestimonialWithMedia
-                            key={index}
-                            reversed={index % 2 === 1}
-                            media={(
-                                <ResponsivePicture
-                                    style={{ backgroundColor: benefit.media.background, borderRadius: '12px' }}
-                                    {...benefit.media}
-                                />
-                            )}
-                            testimonial={(
-                                <div className='flex flex-col gap-4'>
-                                    <h2 className="flex flex-col text-3xl lg:mb-4 font-normal tracking-tight text-balance">
-                                        {benefit.title}
-                                    </h2>
-                                    <p className='text-lg lg:text-2xl leading-relaxed'>
-                                        {benefit.description}
-                                    </p>
-                                    <a className='flex gap-4 items-center text-2xl lg:text-2xl mb-6 font-bold' href={benefit.href}>
-                                        <span>{benefit.cta}</span>
-                                        <ArrowRight className="h-6 w-6" />
-                                    </a>
-                                    {benefit.testimonial ? (
-                                        <TestimonialCard
-                                            companyTitle={benefit.testimonial.appName}
-                                            companyDescription={benefit.testimonial.appDesc}
-                                            {...benefit.testimonial}
-                                        />
-                                    ): null}
-                                </div>
-                            )}
-                        />
+                        <TextAndMediaGroup key={index} reversed={index % 2 === 1}>
+                            <div className='flex flex-col gap-4'>
+                                <h2 className="flex flex-col text-3xl lg:mb-4 font-normal tracking-tight text-balance">
+                                    {benefit.title}
+                                </h2>
+                                <p className='text-lg lg:text-2xl leading-relaxed'>
+                                    {benefit.description}
+                                </p>
+                                <a className='flex gap-4 items-center text-2xl lg:text-2xl mb-6 font-bold' href={benefit.href}>
+                                    <span>{benefit.cta}</span>
+                                    <ArrowRight className="h-6 w-6" />
+                                </a>
+                                {benefit.testimonial ? (
+                                    <TestimonialCard
+                                        companyTitle={benefit.testimonial.appName}
+                                        companyDescription={benefit.testimonial.appDesc}
+                                        {...benefit.testimonial}
+                                    />
+                                ): null}
+                            </div>
+                            <ResponsivePicture
+                                style={{ backgroundColor: benefit.media.background, borderRadius: '12px' }}
+                                {...benefit.media}
+                            />
+                        </TextAndMediaGroup>
                     ))}
                 </div>
             </AdaptyContainer>

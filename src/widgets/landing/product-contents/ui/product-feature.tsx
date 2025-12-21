@@ -1,54 +1,61 @@
-import {Card} from "@shared/ui-toolkit";
-import {ResponsivePicture} from "@entities/landing/responsive-picture";
-import {ArrowRight} from "lucide-react";
+import { ResponsivePicture } from "@entities/landing/responsive-picture";
+import { ArrowRight } from "lucide-react";
 
-interface FeatureBlockProps {
-    image: string;
+import { FlexContainerGroup, InlineGroup } from "@entities/landing/containers";
+import { DefaultHeading, MutedLabel } from "@entities/landing/typography";
+import { FeatureLabelPaper, ProductFeaturePaper } from "@entities/landing/papers";
+import { RedirectToFeatureDocs } from "@features/landing/navigation";
+import type { ImageSource } from "@entities/landing/responsive-picture";
+import type { FeatureType } from "@features/landing/navigation";
+
+interface ProductFeatureBlockProps {
+    image: {
+        src: string;
+        sources: ImageSource[];
+        alt: string;
+    };
     title: string;
-    href: string;
+    hrefType: FeatureType;
     labels: string[];
 }
 
-function FeatureBlock({
+function ProductFeatureBlock({
    image,
    title,
-   href,
+   hrefType,
    labels,
-}: FeatureBlockProps) {
+}: ProductFeatureBlockProps) {
     return (
-        <Card className="bg-a-bg-cold border-none shadow-none">
-            <a
-                href={href}
-                className="text-xl font-semibold text-center mt-6 mb-4 flex flex-col items-center justify-center gap-2 hover:opacity-70 transition-opacity"
-            >
+        <ProductFeaturePaper>
+            <RedirectToFeatureDocs hrefType={hrefType}>
                 <ResponsivePicture
-                    src={image}
-                    sources={[
-                        { srcSet: image }
-                    ]}
+                    src={image.src}
+                    sources={image.sources}
                     height={396}
                     width={707}
-                    alt={[title, 'image'].join(' ')}
+                    alt={image.alt}
                     className="mb-6"
                 />
-                <div className='flex items-center gap-4 mb-6'>
-                    <h4>{title}</h4>
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </div>
+                <div className='px-8 py-4 gap-4 flex flex-col items-center'>
+                    <InlineGroup breakpoint='all' gap={4}>
+                        <DefaultHeading heading='h4'>
+                            {title}
+                        </DefaultHeading>
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </InlineGroup>
 
-                <div className="flex flex-wrap justify-center gap-2 px-4">
-                    {labels.map((label) => (
-                        <span
-                            key={label}
-                            className="px-4 py-2 rounded-full text-2xl text-muted-foreground font-normal bg-a-bg-website"
-                        >
-                            {label}
-                        </span>
-                    ))}
+                    <FlexContainerGroup className="text-center gap-2">
+                        {labels.map((label) => (
+                            <FeatureLabelPaper key={label} className="px-4 py-2">
+                                <MutedLabel>{label}</MutedLabel>
+                            </FeatureLabelPaper>
+                        ))}
+                    </FlexContainerGroup>
                 </div>
-            </a>
-        </Card>
+            </RedirectToFeatureDocs>
+        </ProductFeaturePaper>
     );
 }
 
-export { FeatureBlock };
+export { ProductFeatureBlock };
+export type { ProductFeatureBlockProps, FeatureType };

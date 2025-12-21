@@ -8,7 +8,9 @@ export const Route = createRootRoute({
 function RootLayout () {
     return (
         <>
-            <Outlet />
+            <main className="min-h-screen">
+                <Outlet />
+            </main>
             {import.meta.env.DEV ? (
                 <TanStackRouterDevtools initialIsOpen={false} position='bottom-left'/>
             ) : null}

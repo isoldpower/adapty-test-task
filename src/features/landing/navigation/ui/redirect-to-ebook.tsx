@@ -10,7 +10,7 @@ function RedirectToEbook({
 }: RedirectToEbookProps) {
     return (
         <a
-            href="/ebook"
+            href="./ebook"
             className={cn(className, "inline-block")}
             {...props}
         >

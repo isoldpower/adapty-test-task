@@ -13,3 +13,54 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+.testimonialWithMedia__grid {
+  display: grid;
+  grid-template-columns: 380px calc(100% - 380px - var(--space-xl));
+  gap: var(--space-xl);
+
+  &[aria-details='reversed'] {
+    grid-template-columns: calc(100% - 380px - var(--space-xl)) 380px;
+
+    & > [data-order='1'] {
+      order: 2;
+    }
+    & > [data-order='2'] {
+      order: 1;
+    }
+  }
+
+  @media (max-width: 991px) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-m);
+
+    &[aria-details='reversed'] {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    gap: var(--space-s);
+  }
+
+  @media (max-width: 575px) {
+    grid-template-columns: minmax(0, 1fr);
+
+    &[aria-details='reversed'] {
+      grid-template-columns: minmax(0, 1fr);
+
+      & > [data-order='1'] {
+        order: 1;
+      }
+      & > [data-order='2'] {
+        order: 2;
+      }
+    }
+  }
+
+  &.testimonialWithMedia__breakEarly {
+    @media (max-width: 767px) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+}

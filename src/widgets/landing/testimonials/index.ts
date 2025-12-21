@@ -1,2 +1,2 @@
 export { TestimonialsWidget } from "./ui/testimonials-widget"
-export { TestimonialWithMedia } from './ui/testimonial-with-media.tsx';
+export { TestimonialCard } from './ui/testimonial-card.tsx';

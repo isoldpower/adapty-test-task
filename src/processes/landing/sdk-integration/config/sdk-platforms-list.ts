@@ -1,7 +1,4 @@
-import { AdaptyContainer, AdaptySection } from "@entities/landing/adapty-section";
-import { SdkPlate } from "./sdk-plate.tsx";
-
-const SDK_REFERENCES = [
+const sdkPlatformsList = [
     {
         title: "Swift SDK",
         iconSrc: "https://adapty.io/assets/uploads/2024/01/icon-swift-64x64-1.svg",
@@ -64,28 +61,4 @@ const SDK_REFERENCES = [
     },
 ];
 
-export function SdkPlatformsWidget() {
-    return (
-        <AdaptySection className="bg-a-bg-accent">
-            <AdaptyContainer>
-                <div className="w-full text-center mb-15">
-                    <h2 className="text-accent-foreground flex flex-col items-center mb-4 font-normal tracking-tight text-balance">
-                        Get the SDK for your platform
-                    </h2>
-                </div>
-
-                <div className="grid gap-4 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 w-full">
-                    {SDK_REFERENCES.map((platform) => (
-                        <SdkPlate
-                            key={platform.title}
-                            title={platform.title}
-                            iconSrc={platform.iconSrc}
-                            href={platform.href}
-                            backgroundSrc={platform.backgroundSrc}
-                        />
-                    ))}
-                </div>
-            </AdaptyContainer>
-        </AdaptySection>
-    )
-}
+export { sdkPlatformsList };

@@ -16,7 +16,7 @@ function LandingHeroSection() {
                 <HeroSectionDescription>
                     Save months on integrating subscriptions and double your app revenue with paywall management.
                 </HeroSectionDescription>
-                <InlineGroup>
+                <InlineGroup breakpoint='lg'>
                     <HeroEmailCapture />
                     <Button variant="link" size="lg" className="inline-flex items-center gap-2 text-2xl">
                         <span>Book a demo</span>

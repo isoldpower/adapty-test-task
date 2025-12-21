@@ -24,7 +24,7 @@ function TextAndMediaGroup({
             aria-details={reversed ? 'reversed' : undefined}
         >
             {Children.toArray(children).map((child, i) => (
-                <div data-order={i.toString()}>
+                <div data-order={i.toString()} key={i}>
                     {child}
                 </div>
             ))}

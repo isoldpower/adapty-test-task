@@ -1,3 +1,5 @@
+'use client';
+
 import { useCallback, useState } from "react";
 import { Button } from "@shared/ui-toolkit/button";
 import { ArrowRight } from "lucide-react"

@@ -13,8 +13,8 @@ function ProductContentsSection() {
                 </ThinSectionTitle>
             </CenteredGroup>
             <div className="grid gap-6 sm:gap-8 md:grid-cols-3">
-                {productFeatures.map((feature) => (
-                    <ProductFeatureBlock {...feature} />
+                {productFeatures.map((feature, index) => (
+                    <ProductFeatureBlock {...feature} key={index} />
                 ))}
             </div>
         </>

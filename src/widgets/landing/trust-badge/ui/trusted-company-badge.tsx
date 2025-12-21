@@ -20,7 +20,7 @@ function TrustedCompanyBadge({
     company
 }: TrustedCompanyBadgeProps) {
     return (
-        <TrustedCompanyHover key={company.name}>
+        <TrustedCompanyHover>
             <ResponsivePicture
                 className="max-h-11 w-auto object-contain"
                 {...company.logo}

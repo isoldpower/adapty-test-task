@@ -30,11 +30,10 @@ function CEOTestimonialCarousel({
             </CarouselButtonHover>
             <CarouselContent>
                 {testimonials.map((testimonial, index) => (
-                    <TestimonialCarouselItemTransition index={index}>
+                    <TestimonialCarouselItemTransition index={index} key={index}>
                         {cloneElement(item, {
                             ...item.props,
-                            testimonial,
-                            key: index
+                            testimonial
                         })}
                     </TestimonialCarouselItemTransition>
                 ))}

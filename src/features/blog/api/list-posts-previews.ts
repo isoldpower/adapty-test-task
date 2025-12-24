@@ -10,12 +10,26 @@ interface ListPostsPreviewsOptions {
     page: number;
 }
 
+type AuthorResponse = SanityDocument<{
+    image: SanityImageSource;
+    name: string;
+    bio: string;
+}>;
+
+type PostImageResponse = SanityDocument<{
+    alt: string;
+    src: SanityImageSource;
+}>;
+
 type ListPostsPreviewsResponse = SanityDocument<{
     _id: string;
     title: string;
-    slug: { current: string };
     publishedAt: string;
-    image?: SanityImageSource;
+    category: string[];
+    image: PostImageResponse;
+    author: AuthorResponse;
+    slug: string;
+    readingTime: number;
 }>[];
 
 const listPostsPreviews = async ({
@@ -27,9 +41,19 @@ const listPostsPreviews = async ({
     const paginationChunk = `[${(page * pageSize).toString()}...${(page * pageSize + limit).toString()}]`;
     const sourceChunk = `*[_type == "post" && defined(slug.current)]`;
     const orderChunk = `order(publishedAt ${order})`;
+    const requestedFields = [
+        `_id`,
+        `title`,
+        `publishedAt`,
+        `category`,
+        `"slug": slug.current`,
+        `image->{ src, alt }`,
+        `author->{ name, image, bio }`,
+        `"readingTime": round(length(pt::text(body)) / 5 / 180)`
+    ];
 
     return sanityClient.fetch<ListPostsPreviewsResponse>(
-        `${sourceChunk}|${orderChunk}${paginationChunk}{_id, title, slug, publishedAt, image}`
+        `${sourceChunk}|${orderChunk}${paginationChunk}{${requestedFields.join(', ')}}`
     );
 }
 

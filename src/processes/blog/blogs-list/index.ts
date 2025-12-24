@@ -1,0 +1,1 @@
+export { PaginatedBlogsList } from './ui/paginated-blogs-list.tsx';

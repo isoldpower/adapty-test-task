@@ -35,5 +35,5 @@
       "@processes/*": [ "./src/processes/*" ]
     }
   },
-  "include": ["src"]
+  "include": ["src", "types"]
 }

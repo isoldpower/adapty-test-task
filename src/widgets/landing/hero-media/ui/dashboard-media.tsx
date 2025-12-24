@@ -2,14 +2,15 @@ import { ResponsivePicture } from "@entities/landing/responsive-picture";
 import { cn } from "@shared/lib/utils.ts";
 import { overviewSources } from "../config/media-sources";
 
+
 function HeroOverviewMedia() {
     return (
         <div className={cn(
-            "relative origin-left scale-100 translate-x-[21vw]",
-            "xs:scale-100 xs:translate-x-[23vw]",
-            "sm:scale-100 sm:translate-x-[26vw]",
+            "relative origin-left translate-x-[21vw]",
+            "sm:translate-x-[23vw]",
+            "min-[576px]:translate-x-[26vw]",
             "md:scale-[1.35] md:translate-x-[106px]",
-            "lg:scale-125 lg:translate-x-[100px]",
+            "lg:scale-[1.25] lg:translate-x-[100px]",
             "xl:scale-[1.4] xl:translate-x-[85px]",
         )}>
             <ResponsivePicture

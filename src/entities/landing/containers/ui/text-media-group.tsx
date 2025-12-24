@@ -1,5 +1,4 @@
 import { cn } from "@shared/lib/utils.ts";
-import classes from './Containers.module.scss';
 
 import type { BaseHTMLAttributes } from "react";
 
@@ -12,7 +11,12 @@ function TextMediaGroup({
 }: TextMediaGroupProps) {
     return (
         <article
-            className={cn(classes.textMediaGroup__gridContainer, className)}
+            className={cn(
+                "grid grid-cols-1 items-center gap-8",
+                "md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-12",
+                "lg:grid-cols-2",
+                className
+            )}
             {...props}
         >
             {children}

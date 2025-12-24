@@ -1,6 +1,5 @@
 import { Children, useMemo } from "react";
 import { cn } from "@shared/lib/utils.ts";
-import classes from "./Containers.module.scss";
 
 import type { BaseHTMLAttributes, ReactNode } from "react";
 
@@ -36,9 +35,19 @@ function FooterNavGrid({
     }, [children, maxColumns]);
 
     return (
-        <div className={cn(classes.footerNav__grid, className)} {...props}>
+        <div
+            className={cn(
+                "grid items-stretch grid-cols-1 gap-8",
+                "min-[575px]:grid-cols-2",
+                "md:grid-cols-3",
+                "lg:grid-cols-4",
+                "xl:grid-cols-5",
+                className
+            )}
+            {...props}
+        >
             {childrenColumns.map((column, index) => (
-                <div key={index} className={classes.footerNav__gridColumn}>
+                <div key={index} className={cn("flex flex-col gap-12")}>
                     {column}
                 </div>
             ))}

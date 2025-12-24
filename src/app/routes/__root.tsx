@@ -12,6 +12,7 @@ export const Route = createRootRoute({
             { title: 'The Best Solution to Grow Mobile In-App Purchases | Adapty' },
         ],
         links: [
+            { rel: 'preload', href: mainCss, as: 'style' },
             { rel: 'stylesheet', href: mainCss },
         ]
     })

@@ -30,7 +30,10 @@ function FooterSection() {
                 <FooterDivider orientation='backward' />
                 <FooterSocialsWidget />
                 <FooterDivider orientation='direct' />
-                <FooterNavGrid maxColumns={maxNavColumns} className="w-full">
+                <FooterNavGrid
+                    maxColumns={maxNavColumns}
+                    className="w-full"
+                >
                     {Object.entries(footerLinks).map(([title, links]) => (
                         <FooterLinkGroup section={{ title, links }} key={title} />
                     ))}

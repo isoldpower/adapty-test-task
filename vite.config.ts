@@ -1,20 +1,21 @@
 import { defineConfig } from 'vite'
-import { resolve } from 'path';
 
-import tanstackRouter from '@tanstack/router-plugin/vite';
-import react from '@vitejs/plugin-react-swc'
-import tsconfigPaths from 'vite-tsconfig-paths'
+import { tanstackStart } from '@tanstack/react-start/plugin/vite';
+import react from '@vitejs/plugin-react-swc';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
     base: '/adapty-test-task/',
     plugins: [
-        react(),
-        tanstackRouter({
-            target: 'react',
-            autoCodeSplitting: true,
-            routesDirectory: resolve(import.meta.dirname, 'src', 'app', 'routes'),
-            generatedRouteTree: resolve(import.meta.dirname, 'src', 'app', 'routes', 'routeTree.gen.ts'),
+        tanstackStart({
+            srcDirectory: 'src',
+            router: {
+                entry: 'router.ts',
+                routesDirectory: 'app/routes',
+                generatedRouteTree: 'app/routes/routeTree.gen.ts',
+            }
         }),
+        react(),
         tsconfigPaths()
     ],
 })

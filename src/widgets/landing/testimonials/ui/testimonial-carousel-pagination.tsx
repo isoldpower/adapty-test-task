@@ -18,7 +18,7 @@ function CEOTestimonialCarouselPagination({
     return (
         <CenteredGroup orientation="horizontal" className="justify-center gap-3">
             {testimonials.map((_, index) => (
-                <TestimonialCarouselPaginationDot index={index}>
+                <TestimonialCarouselPaginationDot index={index} key={index}>
                     <TestimonialCarouselPaginationDotTransition index={index}>
                         <TestimonialCarouselDot />
                     </TestimonialCarouselPaginationDotTransition>

@@ -1,10 +1,15 @@
 import { useState, useEffect } from 'react';
 
-function useDocumentSize() {
-    const [size, setSize] = useState({
-        width: typeof window !== 'undefined' ? document.documentElement.clientWidth : 0,
-        height: typeof window !== 'undefined' ? document.documentElement.clientHeight : 0
-    });
+type DocumentSize = {
+    width: number;
+    height: number;
+} | null;
+
+function useDocumentSize(): DocumentSize {
+    const [size, setSize] = useState<DocumentSize>(typeof window !== 'undefined' ? {
+        width: document.documentElement.clientWidth,
+        height: document.documentElement.clientHeight
+    } : null);
 
     useEffect(() => {
         function handleResize() {

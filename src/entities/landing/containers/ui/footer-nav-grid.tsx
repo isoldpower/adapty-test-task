@@ -1,6 +1,9 @@
-import {type BaseHTMLAttributes, Children, type ReactNode, useMemo} from "react";
+import { Children, useMemo } from "react";
 import { cn } from "@shared/lib/utils.ts";
 import classes from "./Containers.module.scss";
+
+import type { BaseHTMLAttributes, ReactNode } from "react";
+
 
 type FooterNavGridProps = BaseHTMLAttributes<HTMLDivElement> & {
     maxColumns?: number;

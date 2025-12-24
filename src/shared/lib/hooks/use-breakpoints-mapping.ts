@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useDocumentSize } from './use-document-size.ts';
+import { useDocumentSize } from '@shared/lib';
 
 type BreakpointKey = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 type BreakpointsMapKey = BreakpointKey | 'default';
@@ -18,17 +18,25 @@ const defaultBreakpoints: BreakpointsRecord = {
 function useBreakpointsMapping<T>(
     breakpointsMap: Record<BreakpointsMapKey, T>,
     breakpoints: BreakpointsRecord = defaultBreakpoints,
+    ssrBreakpoint: BreakpointsMapKey = 'lg'
 ): T {
-    const { width } = useDocumentSize();
+    const documentSize = useDocumentSize();
+    const documentWidth = useMemo(() => {
+        return documentSize ? documentSize.width : null;
+    }, [documentSize]);
 
     return useMemo<T>(() => {
+        if (documentWidth === null) {
+            return breakpointsMap[ssrBreakpoint];
+        }
+
         const sortedBreakpoints = Object.entries(breakpoints).sort(
             ([, widthA], [, widthB]) => widthA - widthB
         ) as [BreakpointKey, number][];
 
         let activeValue: BreakpointsMapKey = 'default';
         for (const [name, breakpointWidth] of sortedBreakpoints) {
-            if (width >= breakpointWidth) {
+            if (documentWidth >= breakpointWidth) {
                 activeValue = name;
             } else {
                 break;
@@ -36,7 +44,7 @@ function useBreakpointsMapping<T>(
         }
 
         return breakpointsMap[activeValue];
-    }, [width, breakpoints, breakpointsMap]);
+    }, [documentWidth, ssrBreakpoint, breakpoints, breakpointsMap]);
 }
 
 export { useBreakpointsMapping };

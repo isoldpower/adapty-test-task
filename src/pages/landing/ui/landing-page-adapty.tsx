@@ -69,7 +69,7 @@ export function LandingPageAdapty() {
                     <CaseStudySection />
                 </AdaptyContainer>
             </AdaptySection>
-            <AdaptySection variant='accent' className="pb-12!">
+            <AdaptySection variant='accent' className='pb-12!'>
                 <AdaptyContainer>
                     <FooterSection />
                 </AdaptyContainer>

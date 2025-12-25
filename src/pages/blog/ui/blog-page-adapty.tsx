@@ -1,8 +1,10 @@
-import {AdaptyContainer, AdaptySection} from "@entities/landing/adapty-section";
+import { AdaptyContainer, AdaptySection } from "@entities/landing/adapty-section";
 import { DefaultHeading } from "@entities/landing/typography";
-import { Input } from "@shared/ui-toolkit";
 import { EbookCtaPost, FeaturedBlogPost } from "@widgets/blog/featured-posts";
 import { PaginatedBlogsList } from "@processes/blog/blogs-list/ui/paginated-blogs-list.tsx";
+import { CategoryBlogsList } from "@processes/blog/blogs-list";
+import { FooterSection } from "@processes/landing/footer-section";
+import { PostsSearchFilters } from "@widgets/blog/posts-search-filters/ui/posts-search-filters.tsx";
 
 
 export function BlogPageAdapty() {
@@ -13,10 +15,7 @@ export function BlogPageAdapty() {
                     <DefaultHeading heading='h2'>
                         Latest news and insights from Adapty
                     </DefaultHeading>
-                    <Input
-                        placeholder='Search by blog posts...'
-                        className="max-w-[600px]"
-                    />
+                    <PostsSearchFilters />
                 </AdaptyContainer>
             </AdaptySection>
             <AdaptySection variant='cold'>
@@ -43,6 +42,16 @@ export function BlogPageAdapty() {
                         />
                     </div>
                     <PaginatedBlogsList />
+                </AdaptyContainer>
+            </AdaptySection>
+            <AdaptySection variant='default'>
+                <AdaptyContainer>
+                    <CategoryBlogsList />
+                </AdaptyContainer>
+            </AdaptySection>
+            <AdaptySection variant='accent' className='pb-12!'>
+                <AdaptyContainer>
+                    <FooterSection />
                 </AdaptyContainer>
             </AdaptySection>
         </>

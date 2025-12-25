@@ -45,7 +45,7 @@ const listPostsPreviews = async ({
         `_id`,
         `title`,
         `publishedAt`,
-        `category`,
+        `"category": category[]->title`,
         `"slug": slug.current`,
         `image->{ src, alt }`,
         `author->{ name, image, bio }`,

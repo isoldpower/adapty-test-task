@@ -24,7 +24,7 @@ function FeaturedBlogPost({
     author
 }: FeaturedBlogPostProps) {
     return (
-        <article className="grid grid-cols-1 md:grid-cols-2 gap-8 overflow-hidden">
+        <article className="grid grid-cols-1 min-[576px]:grid-cols-2 gap-s lg:gap-l overflow-hidden">
             <div className="relative">
                 <img
                     src={image}
@@ -34,15 +34,15 @@ function FeaturedBlogPost({
                     height={688}
                 />
             </div>
-            <div className="flex flex-col justify-between p-6 md:p-8">
+            <div className="flex flex-col justify-between">
                 <div className="space-y-2">
-                    <MutedLabel>
+                    <MutedLabel className="text-[1.2rem] md:text-[calc(1.2rem+1px)] lg:text-[calc(1.2rem+2px)]">
                         {publishDate} • {readTime}
                     </MutedLabel>
-                    <h2 className="font-bold leading-tight text-gray-900">
+                    <h2 className="text-[calc(var(--h2)-8px)] md:text-[calc(var(--h2)-4px) lg:text-[var(--h2)] font-bold leading-tight text-gray-900">
                         {title}
                     </h2>
-                    <p className="text-gray-600 leading-relaxed text-2xl font-normal">
+                    <p className="line-clamp-3 text-[calc(1.6rem-2px)] sm:text-[calc(1.6rem-4px)] md:text-[calc(1.6rem-2px)] lg:text-[1.6rem] text-gray-600 font-normal">
                         {description}
                     </p>
                 </div>

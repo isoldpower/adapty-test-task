@@ -34,16 +34,18 @@ function CompanyBlogPost({
                     alt={post.image.alt}
                     height={688}
                     width={1260}
-                    className="rounded-t-2xl w-full h-[190px] max-w-[100%] object-cover"
+                    className="rounded-t-2xl w-full max-w-[100%] object-cover"
                 />
-                <div className="px-4 pt-4 uppercase font-thin text-[1.2rem]! text-muted-foreground mb-2">
+                <div className="p-xs md:p-[calc(var(--space-xs)+2px)] uppercase font-thin text-[1.2rem]! text-muted-foreground mb-[0.4rem] mt-[0.2rem]">
                     {post.category.join(', ')}
                 </div>
-                <h3 className="px-4 text-[calc(var(--h3)-4px)] mb-5">
+                <h3 className="line-clamp-4 px-4 text-[1.6rem] sm:text-[calc(var(--h3)-10px] md:text-[calc(var(--h3)-7px)] lg:text-[calc(var(--h3)-4px)] mb-5">
                     {post.title}
                 </h3>
-                <MutedLabel className="px-4 pb-4 text-[calc(var(--space-s)+2px)] text-neutral-400!">
-                    {literalPublishedAt} · {post.readingTime} min read
+                <MutedLabel className="flex flex-col md:flex-row text-[1.2rem] px-4 pb-4 lg:text-[calc(1.2rem+2px)] text-neutral-400!">
+                    <span>{literalPublishedAt}</span>
+                    <span className="hidden md:block">&nbsp;•&nbsp;</span>
+                    <span>{post.readingTime} min read</span>
                 </MutedLabel>
             </Card>
         </a>

@@ -1,24 +1,19 @@
 import { Link, useLoaderData, useSearch } from "@tanstack/react-router";
 import { CompanyBlogPost } from "@widgets/blog/posts-grid/ui/company-blog-post.tsx";
 import { buildImageUrl } from "@app/sanity-cms";
-import { useEffect } from "react";
 
 
 function PaginatedBlogsList() {
     const searchParams = useSearch({
         from: '/blog'
     });
-    const { postPreviews, postsMeta } = useLoaderData({
+    const {postPreviews, postsMeta} = useLoaderData({
         from: '/blog'
     });
 
-    useEffect(() => {
-        console.log('change');
-    }, [postsMeta]);
-
     return (
         <div className='w-full flex flex-col gap-12'>
-            <div className="w-full gap-8 grid grid-cols-1 xs:grid-cols-2 min-[576px]:grid-cols-3">
+            <div className="w-full gap-xs lg:gap-s grid grid-cols-1 xs:grid-cols-2 min-[576px]:grid-cols-3">
                 {postPreviews.map((post) => (
                     <CompanyBlogPost
                         key={post._id}
@@ -34,11 +29,11 @@ function PaginatedBlogsList() {
                 ))}
             </div>
             <div className='w-full flex justify-center items-center gap-2'>
-                {Array.from({ length: postsMeta.pages }).map((_, index) => (
+                {Array.from({length: postsMeta.pages}).map((_, index) => (
                     <Link
                         resetScroll={false}
                         to='.'
-                        search={(prev) => ({ ...prev, page: index + 1 })}
+                        search={(prev) => ({...prev, page: index + 1})}
                         replace
                         aria-selected={index === searchParams.page - 1}
                         key={index}

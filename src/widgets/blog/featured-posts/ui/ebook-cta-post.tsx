@@ -24,8 +24,7 @@ function EbookCtaPost({
 }: EbookCtaPostProps) {
     return (
         <Card className="w-full shadow-sm p-m bg-a-bg-website flex flex-col md:flex-row items-center justify-between gap-16">
-            {/* Image */}
-            <div className="shrink-0 w-1/2">
+            <div className="shrink-0 w-full md:w-1/2">
                 <img
                     src={image}
                     alt={title}
@@ -35,8 +34,7 @@ function EbookCtaPost({
                 />
             </div>
 
-            {/* Text content */}
-            <div className="w-1/2 space-y-4">
+            <div className="w-full md:w-1/2 space-y-4">
                 <h2 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900">
                     {title}
                 </h2>

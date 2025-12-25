@@ -3,10 +3,10 @@ import { defineConfig } from 'vite'
 import { tanstackStart } from '@tanstack/react-start/plugin/vite';
 import react from '@vitejs/plugin-react-swc';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import tailwindcss from '@tailwindcss/vite'
 
 
 export default defineConfig({
-    base: '/adapty-test-task/',
     envPrefix: [ 'CLIENT_' ],
     plugins: [
         tanstackStart({
@@ -17,6 +17,7 @@ export default defineConfig({
                 generatedRouteTree: 'app/routes/routeTree.gen.ts',
             }
         }),
+        tailwindcss(),
         react(),
         tsconfigPaths()
     ],

@@ -72,7 +72,6 @@ export function LandingPageAdapty() {
             </AdaptySection>
             <hr className='w-full' />
             <hr className='w-full mt-2' />
-
             <AdaptySection className="py-0! overflow-visible!">
                 <AdaptyContainer className={cn(
                     "py-16 sm:py-20 md:py-24 lg:py-32 xl:py-40 mx-auto",

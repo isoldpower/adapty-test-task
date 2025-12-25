@@ -25,11 +25,11 @@ function CEOTestimonialItem({
                 />
             </BigImageContainer>
             <div className="flex flex-col items-start gap-8">
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl leading-relaxed text-gray-900">
+                <p className="text-lg sm:text-2xl md:text-2xl lg:text-3xl leading-relaxed text-gray-900">
                     "{testimonial.quote}"
                 </p>
                 <div>
-                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900">
+                    <p className="text-3xl font-semibold text-gray-900">
                         {testimonial.author}
                     </p>
                     <p className="text-gray-600">{testimonial.role}</p>

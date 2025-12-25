@@ -41,12 +41,12 @@ function ProductFeatureBlock({
                 />
                 <div className='px-8 py-4 gap-4 flex flex-col items-center'>
                     <InlineGroup breakpoint='all' gap={4}>
-                        <DefaultHeading heading={large ? 'h2' : 'h4'}>
+                        <DefaultHeading heading={large ? 'h2' : 'h5'}>
                             {title}
                         </DefaultHeading>
                         <ArrowRight className={cn(
-                            "size-4 transition-transform group-hover:translate-x-1",
-                            "size-8"
+                            "transition-transform group-hover:translate-x-1",
+                            large ? "size-8" : "size-6"
                         )} />
                     </InlineGroup>
 
@@ -56,7 +56,7 @@ function ProductFeatureBlock({
                                 key={label}
                                 className={cn(
                                     "px-4 py-2",
-                                    !large && "w-full text-clip max-w-[calc(50%-2*var(--spacing))] line-clamp-1"
+                                    !large && "w-full text-clip max-w-full md:max-w-[calc(50%-2*var(--spacing))] line-clamp-1"
                                 )}
                             >
                                 <MutedLabel className={cn(!large && "text-lg! leading-[150%]")}>

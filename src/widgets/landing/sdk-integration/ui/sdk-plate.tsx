@@ -14,7 +14,7 @@ const SdkPlate: React.FC<SdkPlateProps> = ({
     return (
         <a
             href={href}
-            className="overflow-hidden relative flex flex-col items-center justify-center gap-4 border border-gray-200 rounded-xl p-8 hover:border-gray-400 duration-100"
+            className="sm:nth-[10]:col-span-3 md:nth-[9]:col-span-2 md:nth-[10]:col-span-2 lg:col-span-1! overflow-hidden relative flex flex-col items-center justify-center gap-4 border border-gray-200 rounded-xl p-8 hover:border-gray-400 duration-100"
         >
             {backgroundSrc && (
                 <img

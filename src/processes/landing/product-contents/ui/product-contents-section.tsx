@@ -18,6 +18,7 @@ function ProductContentsSection() {
                 </CenteredGroup>
                 {productFeatures.map((feature, index) => (
                     <FeatureBlock key={index} className={cn(
+                        "p-0!",
                         index === 0 && "row-span-2 col-span-2"
                     )}>
                         <ProductFeatureBlock large={index === 0} {...feature} />

@@ -85,7 +85,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ tabs, githubUrl }) => {
                                 )}
                             </Button>
 
-                            <div className="flex p-6 overflow-x-auto font-mono text-lg sm:text-xl md:text-2xl">
+                            <div className="flex p-6 overflow-x-auto font-mono text-lg sm:text-[1.4rem] md:text-2xl">
                                 {/* Line numbers */}
                                 <div className="flex flex-col pr-4 select-none text-right text-gray-400 leading-relaxed">
                                     {Array.from({ length: lineCount }, (_, i) => (
@@ -95,7 +95,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ tabs, githubUrl }) => {
 
                                 {/* Code */}
                                 <div
-                                    className="flex-1 [&_pre]:!bg-transparent [&_pre]:!m-0 [&_pre]:!p-0 [&_code]:!text-lg [&_code]:sm:!text-xl [&_code]:md:!text-2xl [&_code]:!leading-relaxed [&_.line]:!min-h-[24px]"
+                                    className="flex-1 [&_pre]:!bg-transparent [&_pre]:!m-0 [&_pre]:!p-0 [&_code]:!text-lg [&_code]:sm:!text-[1.4rem] [&_code]:md:!text-2xl [&_code]:!leading-relaxed [&_.line]:!min-h-[24px]"
                                     dangerouslySetInnerHTML={{
                                         __html: highlightedCode[tab.label] ?? "",
                                     }}

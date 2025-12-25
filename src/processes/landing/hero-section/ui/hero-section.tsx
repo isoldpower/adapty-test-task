@@ -4,6 +4,7 @@ import { HeroSectionDescription, HeroSectionTitle } from "@entities/landing/typo
 import { EBookReference, HeroEmailCapture } from "@widgets/landing/hero-cta";
 import { InlineGroup } from "@entities/landing/containers";
 import { ResponsivePicture } from "@entities/landing/responsive-picture";
+import {Link} from "@tanstack/react-router";
 
 
 function LandingHeroSection() {
@@ -40,7 +41,10 @@ function LandingHeroSection() {
                 <div className="grid grid-cols-2 flex-col gap-4 sm:gap-6 md:gap-8">
                     {/* First full-width image */}
                     <div className="col-span-2 w-full rounded-2xl overflow-hidden group">
-                        <div className="w-full relative">
+                        <Link
+                            to='/blog'
+                            className="w-full relative"
+                        >
                             <ResponsivePicture
                                 sources={[
                                     { srcSet: 'https://adapty.io/assets/uploads/2025/07/screen-3-v2@2x.webp' }
@@ -54,10 +58,13 @@ function LandingHeroSection() {
                                 loading="eager"
                                 fetchPriority="high"
                             />
-                        </div>
+                        </Link>
                     </div>
                     <div className="grid grid-cols-subgrid col-span-2 w-full gap-4 sm:gap-6 md:gap-8 max-h-[300px]">
-                        <div className="rounded-2xl overflow-hidden w-full will-change-transform hover:rotate-1 hover:scale-105 duration-100 relative">
+                        <Link
+                            to='/blog'
+                            className="rounded-2xl overflow-hidden w-full will-change-transform hover:rotate-1 hover:scale-105 duration-100 relative"
+                        >
                             <ResponsivePicture
                                 sources={[
                                     { srcSet: 'https://adapty.io/assets/uploads/2024/02/img-predicted-winner@2x.webp' }
@@ -71,8 +78,11 @@ function LandingHeroSection() {
                                 loading="eager"
                                 fetchPriority="high"
                             />
-                        </div>
-                        <div className="group rounded-2xl overflow-hidden w-full will-change-transform hover:-rotate-1 hover:scale-105 duration-100 relative">
+                        </Link>
+                        <a
+                            href="https://funnelfox.com/"
+                            className="group rounded-2xl overflow-hidden w-full will-change-transform hover:-rotate-1 hover:scale-105 duration-100 relative"
+                        >
                             <h4 className="flex absolute duration-100 group-hover:rotate-2 scale-0 origin-left group-hover:scale-100 z-10 top-[5%] left-[5%] right-[5%]">
                                 <span className="relative group-hover:before:content-[_] group-hover:before:absolute group-hover:before:border-bg-a-accent group-hover:before:border-b group-hover:before:left-0 group-hover:before:bottom-0 group-hover:before:w-full bg-a-black-light-x2 text-accent-foreground font-thin p-2 rounded-2xl">
                                     Explore our featured product
@@ -91,7 +101,7 @@ function LandingHeroSection() {
                                 loading="eager"
                                 fetchPriority="high"
                             />
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>

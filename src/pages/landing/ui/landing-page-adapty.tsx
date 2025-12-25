@@ -1,4 +1,4 @@
-import { AdaptyContainer, AdaptySection } from "@entities/landing/adapty-section";
+import { AttioContainer, AttioSection } from "@entities/landing/adapty-section";
 import { LandingHeroSection } from "@processes/landing/hero-section";
 import { TrustBadgesSection } from "@processes/landing/trust-badges-section";
 import { ProductContentsSection } from "@processes/landing/product-contents";
@@ -9,50 +9,50 @@ import { CEOTestimonialsSection } from "@processes/landing/testimonials-section"
 import { EnterpriseSection } from "@processes/landing/enterprise-section";
 import { CaseStudySection } from "@processes/landing/casestudy-section";
 import { FooterSection } from "@processes/landing/footer-section";
-import {cn} from "@shared/lib/utils.ts";
-import {CenteredGroup} from "@entities/landing/containers";
+import { cn } from "@shared/lib/utils.ts";
+import { CenteredGroup } from "@entities/landing/containers";
 
 
 export function LandingPageAdapty() {
     return (
         <>
-            <AdaptySection
+            <AttioSection
                 variant='hero' 
                 showGrid
                 gridVariant='default'
                 interactiveGrid 
                 className="w-full min-h-screen flex items-center !py-20 sm:!py-24 md:!py-32"
             >
-                <AdaptyContainer className="w-full flex flex-col gap-40">
+                <AttioContainer className="w-full flex flex-col gap-40">
                     <LandingHeroSection />
                     <TrustBadgesSection />
-                </AdaptyContainer>
-            </AdaptySection>
+                </AttioContainer>
+            </AttioSection>
             <hr className='w-full' />
             <hr className='w-full mt-2' />
-            <AdaptySection variant='default' className="py-0! overflow-visible!">
-                <AdaptyContainer className={cn(
-                    "mx-1 py-16 sm:py-20 md:py-24 lg:py-32 xl:py-40 mx-auto",
+            <AttioSection variant='default' className="py-0! overflow-visible!">
+                <AttioContainer className={cn(
+                    "py-16 sm:py-20 md:py-24 lg:py-32 xl:py-40 mx-auto",
                     "before:content-[_] before:absolute before:left-0 before:-top-[10%] before:-bottom-[10%] before:h-[120%] before:border-l before:opacity-10",
                     "after:content-[_] after:absolute after:right-0 after:-top-[10%] after:-bottom-[10%] after:h-[120%] after:border-r after:opacity-10"
                 )}>
                     <AchievementsSection />
-                </AdaptyContainer>
-            </AdaptySection>
+                </AttioContainer>
+            </AttioSection>
             <hr className='w-full' />
             <hr className='w-full mt-2' />
-            <AdaptySection variant='grid' showGrid interactiveGrid gridVariant='default' className="py-20 sm:py-24 md:py-32">
-                <AdaptyContainer className={cn(
+            <AttioSection variant='grid' showGrid interactiveGrid gridVariant='default' className="py-20 sm:py-24 md:py-32">
+                <AttioContainer className={cn(
                     "py-16 sm:py-20 md:py-24 mx-auto",
                     "before:content-[_] before:absolute before:left-0 before:-top-[10%] before:-bottom-[10%] before:h-[120%] before:border-l before:opacity-10",
                     "after:content-[_] after:absolute after:right-0 after:-top-[10%] after:-bottom-[10%] after:h-[120%] after:border-r after:opacity-10"
                 )}>
                     <ProductContentsSection />
-                </AdaptyContainer>
-            </AdaptySection>
+                </AttioContainer>
+            </AttioSection>
             <hr className='w-full' />
-            <AdaptySection className="py-0! overflow-visible!">
-                <AdaptyContainer className={cn(
+            <AttioSection className="py-0! overflow-visible!">
+                <AttioContainer className={cn(
                     "py-16 sm:py-20 md:py-24 lg:py-32 xl:py-40 mx-auto",
                     "before:content-[_] before:absolute before:left-0 before:-top-[10%] before:-bottom-[10%] before:h-[120%] before:border-l before:opacity-10",
                     "after:content-[_] after:absolute after:right-0 after:-top-[10%] after:-bottom-[10%] after:h-[120%] after:border-r after:opacity-10"
@@ -61,54 +61,54 @@ export function LandingPageAdapty() {
                         <SDKIntegrationSection />
                         <SDKPlatformsList />
                     </CenteredGroup>
-                </AdaptyContainer>
-            </AdaptySection>
+                </AttioContainer>
+            </AttioSection>
             <hr className='w-full' />
             <hr className='w-full mt-2' />
-            <AdaptySection variant='feature' gridOpacity={0.02} showGrid gridVariant='subtle' className="py-20 sm:py-24 md:py-32">
-                <AdaptyContainer>
+            <AttioSection variant='feature' gridOpacity={0.02} showGrid gridVariant='subtle' className="py-20 sm:py-24 md:py-32">
+                <AttioContainer>
                     <ProductBenefitsSection />
-                </AdaptyContainer>
-            </AdaptySection>
+                </AttioContainer>
+            </AttioSection>
             <hr className='w-full' />
             <hr className='w-full mt-2' />
-            <AdaptySection className="py-0! overflow-visible!">
-                <AdaptyContainer className={cn(
+            <AttioSection className="py-0! overflow-visible!">
+                <AttioContainer className={cn(
                     "py-16 sm:py-20 md:py-24 lg:py-32 xl:py-40 mx-auto",
                     "before:content-[_] before:absolute before:left-0 before:-top-[10%] before:-bottom-[10%] before:h-[120%] before:border-l before:opacity-10",
                     "after:content-[_] after:absolute after:right-0 after:-top-[10%] after:-bottom-[10%] after:h-[120%] after:border-r after:opacity-10"
                 )}>
                     <CEOTestimonialsSection />
-                </AdaptyContainer>
-            </AdaptySection>
+                </AttioContainer>
+            </AttioSection>
             <hr className='w-full' />
             <hr className='w-full mt-2' />
-            <AdaptySection showGrid interactiveGrid gridVariant='default' className="py-0! overflow-visible!">
-                <AdaptyContainer className={cn(
+            <AttioSection showGrid interactiveGrid gridVariant='default' className="py-0! overflow-visible!">
+                <AttioContainer className={cn(
                     "py-16 sm:py-20 mx-auto",
                     "before:content-[_] before:absolute before:left-0 before:-top-[10%] before:-bottom-[10%] before:h-[120%] before:border-l before:opacity-10",
                     "after:content-[_] after:absolute after:right-0 after:-top-[10%] after:-bottom-[10%] after:h-[120%] after:border-r after:opacity-10"
                 )}>
                     <EnterpriseSection />
-                </AdaptyContainer>
-            </AdaptySection>
+                </AttioContainer>
+            </AttioSection>
             <hr className='w-full' />
-            <AdaptySection className="py-0! overflow-visible!">
-                <AdaptyContainer className={cn(
+            <AttioSection className="py-0! overflow-visible!">
+                <AttioContainer className={cn(
                     "py-16 sm:py-24 pb-40! mx-auto",
                     "before:content-[_] before:absolute before:left-0 before:-top-[10%] before:-bottom-[10%] before:h-[120%] before:border-l before:opacity-10",
                     "after:content-[_] after:absolute after:right-0 after:-top-[10%] after:-bottom-[10%] after:h-[120%] after:border-r after:opacity-10"
                 )}>
                     <CaseStudySection />
-                </AdaptyContainer>
-            </AdaptySection>
+                </AttioContainer>
+            </AttioSection>
             <hr className='w-full' />
             <hr className='w-full mt-2 mb-16' />
-            <AdaptySection className='bg-a-black-light-x1! pb-12 pt-16 sm:pt-20'>
-                <AdaptyContainer>
+            <AttioSection className='bg-a-black-light-x1! pb-12 pt-16 sm:pt-20'>
+                <AttioContainer>
                     <FooterSection />
-                </AdaptyContainer>
-            </AdaptySection>
+                </AttioContainer>
+            </AttioSection>
         </>
     );
 }

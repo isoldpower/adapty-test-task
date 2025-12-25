@@ -30,7 +30,7 @@ function ProductBenefitsSection() {
     }, []);
 
     return (
-        <div className="flex flex-col gap-32">
+        <div className="flex flex-col gap-32 w-full">
             {benefitsList.map(({ testimonial, ...benefit }, index) => (
                 <TextAndMediaGroup breakEarly reversed={index % 2 === 1}>
                     {getOrderedChildren(index, [

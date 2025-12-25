@@ -49,7 +49,7 @@ export function BlogPageAdapty() {
                     <CategoryBlogsList />
                 </AdaptyContainer>
             </AdaptySection>
-            <AdaptySection variant='accent' className='pb-12!'>
+            <AdaptySection variant='accent'>
                 <AdaptyContainer>
                     <FooterSection />
                 </AdaptyContainer>

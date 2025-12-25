@@ -26,7 +26,7 @@ function CaseStudyCard({
     caseStudy: { company, description, result, href }
 }: CaseStudyCardProps) {
     return (
-        <LevitatingPaper>
+        <LevitatingPaper className='shadow-none! border'>
             <ItemsGroup className="min-h-full justify-between gap-4">
                 <ItemsGroup orientation="horizontal" className="gap-4 mb-2">
                     <CompanyLogo

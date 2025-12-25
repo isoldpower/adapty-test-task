@@ -9,9 +9,10 @@ function HeroSectionTitle({
 }: HeroSectionTitleProps) {
     return (
         <h1 className={cn(
-            "mb-6 text-balance font-bold tracking-tight text-transparent",
-            "lg:text-9xl lg:py-xs",
-            "bg-gradient-to-br from-accent via-purple-500 to-accent bg-clip-text"
+            "mb-6 text-balance font-bold tracking-tight text-foreground",
+            "text-6xl md:text-7xl lg:text-8xl xl:text-9xl",
+            "leading-[0.95]",
+            "bg-clip-text text-transparent bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
         )}>
             {children}
         </h1>

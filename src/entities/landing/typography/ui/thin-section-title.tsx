@@ -9,7 +9,12 @@ function ThinSectionTitle({
     ...props
 }: ThinSectionTitleProps) {
     return (
-        <h2 className={cn("font-normal tracking-tight text-center text-balance", className)} {...props}>
+        <h2 className={cn(
+            "font-semibold tracking-tight text-center text-balance",
+            "text-4xl md:text-5xl lg:text-6xl",
+            "leading-tight",
+            className
+        )} {...props}>
             {children}
         </h2>
     )

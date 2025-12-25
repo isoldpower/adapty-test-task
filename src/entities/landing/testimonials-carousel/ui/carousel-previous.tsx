@@ -11,7 +11,7 @@ function TestimonialCarouselPrevious({
     return (
         <button
             type="button"
-            className={cn("flex-shrink-0", className)}
+            className={cn("flex-shrink-0 text-gray-900", className)}
             aria-label="Previous testimonial button"
             {...props}
         >

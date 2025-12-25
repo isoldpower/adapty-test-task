@@ -10,7 +10,7 @@ function ProductFeaturePaper({
     ...props
 }: ProductFeaturePaperProps) {
     return (
-        <Card className={cn("bg-a-bg-cold border-none shadow-none", className)} {...props}>
+        <Card className={cn("bg-a-bg-website border-none shadow-none", className)} {...props}>
             {children}
         </Card>
     );

@@ -5,7 +5,7 @@ import { ProductBenefitText } from "@widgets/landing/product-benefit";
 import { benefitsList } from "../config/benefits-list.ts";
 
 import type { BenefitItem } from "../config/benefits-list.ts";
-import {useCallback} from "react";
+import { useCallback } from "react";
 
 function TestimonialCard({
     testimonial,
@@ -30,13 +30,14 @@ function ProductBenefitsSection() {
     }, []);
 
     return (
-        <div className="flex flex-col gap-48">
+        <div className="flex flex-col gap-32 w-full">
             {benefitsList.map(({ testimonial, ...benefit }, index) => (
-                <TextAndMediaGroup key={index} reversed={index % 2 === 1}>
+                <TextAndMediaGroup breakEarly reversed={index % 2 === 1}>
                     {getOrderedChildren(index, [
                         <TestimonialCard testimonial={testimonial} {...benefit} />,
                         <ResponsivePicture
                             style={{backgroundColor: benefit.media.background, borderRadius: '12px'}}
+                            className="max-h-[400px] w-full object-contain"
                             {...benefit.media}
                         />
                     ])}

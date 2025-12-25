@@ -32,7 +32,7 @@ function FooterSection() {
                 <FooterDivider orientation='direct' />
                 <FooterNavGrid
                     maxColumns={maxNavColumns}
-                    className="w-full"
+                    className="w-full text-accent-foreground"
                 >
                     {Object.entries(footerLinks).map(([title, links]) => (
                         <FooterLinkGroup section={{ title, links }} key={title} />

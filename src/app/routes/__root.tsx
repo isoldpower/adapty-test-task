@@ -24,7 +24,7 @@ export const Route = createRootRoute({
 function RootLayout () {
     return (
         <RootDocument>
-            <main className="min-h-screen">
+            <main className="min-h-screen max-w-screen overflow-x-hidden bg-a-bg-website text-a-text-website">
                 <Outlet />
             </main>
             {import.meta.env.DEV ? (

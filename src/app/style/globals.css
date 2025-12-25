@@ -1,6 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@tailwind utilities;
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
 
 /* Gilroy Font Face */

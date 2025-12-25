@@ -20,30 +20,24 @@ function QuoteIcon({
     );
 }
 
-type TestimonialPaperProps = ComponentProps<typeof Card> & {
-    negative?: boolean;
-};
+type TestimonialPaperProps = ComponentProps<typeof Card>;
 
 function TestimonialPaper({
     children,
     className,
-    negative = false,
     ...props
 }: TestimonialPaperProps) {
     return (
         <Card
             className={cn(
-                "border rounded-2xl p-4 lg:p-10 relative",
-                negative ? "border-neutral-300" : "border-neutral-700",
+                "border! shadow-none! bg-transparent rounded-2xl p-4 lg:p-10 relative",
                 className
             )}
             {...props}
         >
             <QuoteIcon className={cn(
-                "absolute -top-4 z-10 p-2 mb-6 lg:-top-5",
-                negative
-                    ? "bg-a-bg-accent text-a-bg-website"
-                    : "bg-a-bg-website text-a-bg-accent"
+                "absolute -top-4 z-10 p-2 mb-6 lg:-top-6",
+                "text-neutral-700"
             )} />
             {children}
         </Card>

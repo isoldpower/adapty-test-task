@@ -11,7 +11,6 @@ interface TestimonialCardProps {
     author: string
     role: string
     avatar: string
-    negative?: boolean
 }
 
 export function TestimonialCard({
@@ -21,11 +20,10 @@ export function TestimonialCard({
     avatar,
     companyImg,
     companyDescription,
-    companyTitle,
-    negative = false
+    companyTitle
 }: TestimonialCardProps) {
     return (
-        <TestimonialPaper negative={negative} className="flex flex-col gap-3 lg:gap-6">
+        <TestimonialPaper className="flex flex-col gap-3 lg:gap-6">
             <CenteredGroup orientation="horizontal" className='lg:gap-6'>
                 <TestimonialCompanyImage src={companyImg} alt={companyTitle} />
                 <TestimonialCompanyHeader companyDescription={companyDescription} companyTitle={companyTitle} />

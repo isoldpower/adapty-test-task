@@ -7,7 +7,7 @@ import { CenteredGroup } from "@entities/landing/containers";
 function SDKPlatformsList() {
     return (
         <CenteredGroup className='gap-8'>
-            <ThinSectionTitle className="text-accent-foreground">
+            <ThinSectionTitle className="text-foreground">
                 Get the SDK for your platform
             </ThinSectionTitle>
             <div className="grid gap-4 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 w-full">

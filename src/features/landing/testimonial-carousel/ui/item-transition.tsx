@@ -17,7 +17,7 @@ function TestimonialCarouselItemTransition({
     return (
         <div
             className={cn(
-                "ease-linear",
+                "ease-linear w-full",
                 index === currentIndex ? "opacity-100 relative" : "opacity-0 absolute pointer-events-none",
                 className
             )}

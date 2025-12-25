@@ -14,12 +14,12 @@ function FooterLinkGroup({
 }: FooterLinkGroupProps) {
     return (
         <div>
-            <h4 className="mb-4 font-semibold text-white">
+            <h4 className="mb-4 font-semibold">
                 {section.title}
             </h4>
             <List className="space-y-2">
                 {section.links.map((link) => (
-                    <a href={link.href} className="text-lg text-gray-400 transition-colors hover:text-white">
+                    <a key={link.href} href={link.href} className="text-base sm:text-lg transition-colors opacity-80 hover:opacity-60">
                         {link.label}
                     </a>
                 ))}

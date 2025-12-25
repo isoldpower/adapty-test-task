@@ -6,6 +6,7 @@ import { benefitsList } from "../config/benefits-list.ts";
 
 import type { BenefitItem } from "../config/benefits-list.ts";
 import {useCallback} from "react";
+import {Card} from "@shared/ui-toolkit";
 
 function TestimonialCard({
     testimonial,
@@ -30,9 +31,9 @@ function ProductBenefitsSection() {
     }, []);
 
     return (
-        <div className="flex flex-col gap-48">
+        <div className="flex flex-col gap-32">
             {benefitsList.map(({ testimonial, ...benefit }, index) => (
-                <TextAndMediaGroup key={index} reversed={index % 2 === 1}>
+                <TextAndMediaGroup reversed={index % 2 === 1}>
                     {getOrderedChildren(index, [
                         <TestimonialCard testimonial={testimonial} {...benefit} />,
                         <ResponsivePicture

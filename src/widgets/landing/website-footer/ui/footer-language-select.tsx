@@ -30,7 +30,7 @@ function FooterLanguageSelect({
 
     return (
         <Select value={currentLanguage} onValueChange={setCurrentLanguage}>
-            <SelectTrigger className='font-thin bg-a-black border-none h-[34px]! text-2xl text-muted-foreground w-[150px]'>
+            <SelectTrigger className='font-thin bg-a-black-light-x2 border-none h-[34px]! text-2xl text-muted-foreground w-[150px]'>
                 <SelectValue placeholder="Select language" />
             </SelectTrigger>
             <SelectContent className='font-thin border-none bg-a-black text-accent-foreground'>

@@ -1,12 +1,9 @@
 import { cloneElement } from "react";
-import { CarouselContent, CarouselNext, CarouselPrevious } from "@shared/ui-toolkit";
+import { CarouselContent } from "@shared/ui-toolkit";
 import {
-    TestimonialCarouselNext,
-    TestimonialCarouselPrevious,
     TestimonialCarouselShell
 } from "@entities/landing/testimonials-carousel";
 import { TestimonialCarouselItemTransition } from "@features/landing/testimonial-carousel";
-import { CarouselButtonHover } from "@features/landing/hover-animations";
 
 import type { CEOTestimonial } from "../types";
 import type { ReactElement } from "react";
@@ -23,12 +20,7 @@ function CEOTestimonialCarousel({
 }: CEOTestimonialCarouselProps) {
     return (
         <TestimonialCarouselShell>
-            <CarouselButtonHover>
-                <CarouselPrevious>
-                    <TestimonialCarouselPrevious />
-                </CarouselPrevious>
-            </CarouselButtonHover>
-            <CarouselContent>
+            <CarouselContent aria-label="CEO Testimonials Carousel">
                 {testimonials.map((testimonial, index) => (
                     <TestimonialCarouselItemTransition index={index} key={index}>
                         {cloneElement(item, {
@@ -38,11 +30,6 @@ function CEOTestimonialCarousel({
                     </TestimonialCarouselItemTransition>
                 ))}
             </CarouselContent>
-            <CarouselButtonHover>
-                <CarouselNext>
-                    <TestimonialCarouselNext />
-                </CarouselNext>
-            </CarouselButtonHover>
         </TestimonialCarouselShell>
     );
 }

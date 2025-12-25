@@ -3,7 +3,7 @@ import { EmailCaptureForm } from "@features/landing/email-capture";
 
 function HeroEmailCapture() {
     return (
-        <EmailCaptureForm>
+        <EmailCaptureForm className="w-full">
             <Input
                 type="email"
                 placeholder="Email address"

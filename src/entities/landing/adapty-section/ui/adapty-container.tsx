@@ -13,7 +13,7 @@ function AdaptyContainer({
     ...props
 }: AdaptyContainerProps) {
     return (
-        <Container className={cn("max-w-full w-[1100px] flex flex-col mx-auto items-start border-none", className)} {...props}>
+        <Container className={cn("max-w-full w-[1100px] flex flex-col mx-auto items-start", className)} {...props}>
             {children}
         </Container>
     )

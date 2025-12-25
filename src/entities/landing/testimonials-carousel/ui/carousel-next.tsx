@@ -11,7 +11,7 @@ function TestimonialCarouselNext({
     return (
         <button
             type="button"
-            className={cn("text-white flex-shrink-0", className)}
+            className={cn("text-gray-900 flex-shrink-0", className)}
             aria-label="Next testimonial button"
             {...props}
         >

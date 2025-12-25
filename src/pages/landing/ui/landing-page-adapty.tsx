@@ -11,7 +11,7 @@ import { CaseStudySection } from "@processes/landing/casestudy-section";
 import { FooterSection } from "@processes/landing/footer-section";
 
 
-export function LandingPage() {
+export function LandingPageAdapty() {
     return (
         <>
             <AdaptySection variant='warm'>
@@ -69,7 +69,7 @@ export function LandingPage() {
                     <CaseStudySection />
                 </AdaptyContainer>
             </AdaptySection>
-            <AdaptySection variant='accent' className="pb-12!">
+            <AdaptySection variant='accent' className='pb-12!'>
                 <AdaptyContainer>
                     <FooterSection />
                 </AdaptyContainer>
@@ -78,4 +78,4 @@ export function LandingPage() {
     );
 }
 
-export default LandingPage;
+export default LandingPageAdapty;

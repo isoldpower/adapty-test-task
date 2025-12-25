@@ -17,6 +17,11 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      CLIENT_SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
+      CLIENT_SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
+      CLIENT_SANITY_API_VERSION: ${{ secrets.SANITY_API_VERSION }}
+      CLIENT_SANITY_USE_CDN: ${{ secrets.SANITY_USE_CDN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

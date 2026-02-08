@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 type DocumentSize = {
     width: number;
@@ -6,7 +6,7 @@ type DocumentSize = {
 } | null;
 
 function useDocumentSize(): DocumentSize {
-    const [size, setSize] = useState<DocumentSize>(typeof window !== 'undefined' ? {
+    const [size, setSize] = useState<DocumentSize>(typeof window !== "undefined" ? {
         width: document.documentElement.clientWidth,
         height: document.documentElement.clientHeight
     } : null);
@@ -19,12 +19,12 @@ function useDocumentSize(): DocumentSize {
             });
         }
 
-        window.addEventListener('resize', handleResize);
+        window.addEventListener("resize", handleResize);
         handleResize();
 
         return () => {
-            window.removeEventListener('resize', handleResize);
-        }
+            window.removeEventListener("resize", handleResize);
+        };
     }, []);
 
     return size;

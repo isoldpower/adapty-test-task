@@ -1,9 +1,10 @@
 import { createContext, useContext } from "react";
+
 import type { CarouselContextPayload } from "./types.ts";
 
 const stomp = () => {
     throw new Error("Function must be overridden in CarouselContextProvider");
-}
+};
 
 const CarouselContext = createContext<CarouselContextPayload>({
     currentIndex: 0,

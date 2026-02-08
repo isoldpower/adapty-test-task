@@ -1,12 +1,13 @@
-import type {ListPostsByCategoryResponse} from "@features/blog";
 import {
     countPosts,
     listCategories,
     listPostsByCategory,
     listPostsPreviews
 } from "@features/blog";
-import type {BlogSearchParams} from "@app/routes/blog.tsx";
-import type {ListCategoriesResponseItem} from "@features/blog/api/list-categories.ts";
+
+import type { BlogSearchParams } from "@app/routes/blog.tsx";
+import type { ListPostsByCategoryResponse } from "@features/blog";
+import type { ListCategoriesResponseItem } from "@features/blog/api/list-categories.ts";
 
 
 type CategoryWithPosts = ListCategoriesResponseItem & {
@@ -15,7 +16,7 @@ type CategoryWithPosts = ListCategoriesResponseItem & {
 
 async function fetchCategories({
     order
-}: { order: 'asc' | 'desc' }): Promise<CategoryWithPosts[]> {
+}: { order: "asc" | "desc" }): Promise<CategoryWithPosts[]> {
     const categoriesList = await listCategories({
         order,
         size: 9
@@ -35,7 +36,7 @@ async function fetchCategories({
 export async function blogLoader({ page }: BlogSearchParams) {
     const pageIndex = page - 1;
     const pageSize = 12;
-    const order = 'desc';
+    const order = "desc";
 
     const postPreviews = await listPostsPreviews({
         order,

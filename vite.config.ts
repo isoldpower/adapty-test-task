@@ -1,24 +1,23 @@
-import { defineConfig } from 'vite'
-
-import { tanstackStart } from '@tanstack/react-start/plugin/vite';
-import react from '@vitejs/plugin-react-swc';
-import tsconfigPaths from 'vite-tsconfig-paths';
-import tailwindcss from '@tailwindcss/vite'
+import tailwindcss from "@tailwindcss/vite";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import react from "@vitejs/plugin-react-swc";
+import { defineConfig } from "vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 
 export default defineConfig({
-    envPrefix: [ 'CLIENT_' ],
+    envPrefix: [ "CLIENT_" ],
     plugins: [
         tanstackStart({
-            srcDirectory: 'src',
+            srcDirectory: "src",
             router: {
-                entry: 'router.ts',
-                routesDirectory: 'app/routes',
-                generatedRouteTree: 'app/routes/routeTree.gen.ts',
+                entry: "router.ts",
+                routesDirectory: "app/routes",
+                generatedRouteTree: "app/routes/routeTree.gen.ts",
             }
         }),
         tailwindcss(),
         react(),
         tsconfigPaths()
     ],
-})
+});

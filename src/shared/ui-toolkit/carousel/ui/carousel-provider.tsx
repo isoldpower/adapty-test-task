@@ -1,5 +1,6 @@
-import { CarouselContext } from "@shared/ui-toolkit";
 import { useCallback, useMemo, useState } from "react";
+
+import { CarouselContext } from "@shared/ui-toolkit";
 
 
 interface CarouselProviderProps {

@@ -1,1 +1,1 @@
-export { Button } from "../@shadcn/ui/button"
+export { Button } from "../@shadcn/ui/button";

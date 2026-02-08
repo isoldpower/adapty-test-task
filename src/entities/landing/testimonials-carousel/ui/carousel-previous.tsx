@@ -1,8 +1,11 @@
-import type { ButtonHTMLAttributes } from "react";
-import { cn } from "@shared/lib/utils.ts";
 import { ChevronLeft } from "lucide-react";
 
-type CarouselPreviousProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type' | 'aria-label'>;
+import { cn } from "@shared/lib/utilities";
+
+
+import type { ButtonHTMLAttributes } from "react";
+
+type CarouselPreviousProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "type" | "aria-label">;
 
 function TestimonialCarouselPrevious({
     className,
@@ -11,7 +14,7 @@ function TestimonialCarouselPrevious({
     return (
         <button
             type="button"
-            className={cn("flex-shrink-0 text-gray-900", className)}
+            className={cn("flex-shrink-0", className)}
             aria-label="Previous testimonial button"
             {...props}
         >

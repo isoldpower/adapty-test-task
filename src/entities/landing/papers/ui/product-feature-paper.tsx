@@ -1,6 +1,7 @@
-import type { ComponentProps } from "react";
+import { cn } from "@shared/lib/utilities";
 import { Card } from "@shared/ui-toolkit";
-import { cn } from "@shared/lib/utils.ts";
+
+import type { ComponentProps } from "react";
 
 type ProductFeaturePaperProps = ComponentProps<typeof Card>;
 
@@ -10,7 +11,7 @@ function ProductFeaturePaper({
     ...props
 }: ProductFeaturePaperProps) {
     return (
-        <Card className={cn("bg-a-bg-website border-none shadow-none", className)} {...props}>
+        <Card className={cn("bg-a-bg-cold border-none shadow-none", className)} {...props}>
             {children}
         </Card>
     );

@@ -1,0 +1,12 @@
+@custom-variant attio (&:where([data-theme=attio], [data-theme=attio] *));
+
+:root[data-theme=attio] {
+    --background: red;
+    --foreground: green;
+    --card: yellow;
+    --card-foreground: black;
+    --popover: blue;
+    --popover-foreground: white;
+    --primary: magenta;
+    --primary-foreground: cyan;
+}

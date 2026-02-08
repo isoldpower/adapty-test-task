@@ -1,16 +1,18 @@
-import {type AnchorHTMLAttributes, useMemo} from "react";
-import { cn } from "@shared/lib/utils.ts";
+import { type AnchorHTMLAttributes, useMemo } from "react";
 
-type FeatureType = 'for-developers' | 'for-marketers' | 'for-owners';
+import { cn } from "@shared/lib/utilities";
 
-type RedirectToFeatureDocsProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> & {
+
+type FeatureType = "for-developers" | "for-marketers" | "for-owners";
+
+type RedirectToFeatureDocsProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & {
     hrefType: FeatureType;
 };
 
 const linksMap: Record<FeatureType, string> = {
-    'for-developers': './docs/for-developers',
-    'for-marketers': './docs/for-marketers',
-    'for-owners': './docs/for-owners',
+    "for-developers": "./docs/for-developers",
+    "for-marketers": "./docs/for-marketers",
+    "for-owners": "./docs/for-owners",
 };
 
 function RedirectToFeatureDocs({

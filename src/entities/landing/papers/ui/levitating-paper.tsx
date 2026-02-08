@@ -1,6 +1,7 @@
-import type { ComponentProps } from "react";
+import { cn } from "@shared/lib/utilities";
 import { Card } from "@shared/ui-toolkit";
-import { cn } from "@shared/lib/utils.ts";
+
+import type { ComponentProps } from "react";
 
 type LevitatingPaperProps = ComponentProps<typeof Card>;
 

@@ -1,1 +1,1 @@
-export { Tabs, TabsList, TabsTrigger, TabsContent } from "../@shadcn/ui/tabs"
+export { Tabs, TabsList, TabsTrigger, TabsContent } from "../@shadcn/ui/tabs";

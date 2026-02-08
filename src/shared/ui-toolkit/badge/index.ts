@@ -1,1 +1,1 @@
-export { Badge } from "../@shadcn/ui/badge"
+export { Badge } from "../@shadcn/ui/badge";

@@ -1,4 +1,5 @@
-import { cn } from "@shared/lib/utils.ts";
+import { cn } from "@shared/lib/utilities";
+
 import type { BaseHTMLAttributes } from "react";
 
 type ThinSectionTitleProps = BaseHTMLAttributes<HTMLHeadingElement>;
@@ -9,15 +10,10 @@ function ThinSectionTitle({
     ...props
 }: ThinSectionTitleProps) {
     return (
-        <h2 className={cn(
-            "font-semibold tracking-tight text-center text-balance",
-            "text-4xl md:text-5xl lg:text-6xl",
-            "leading-tight",
-            className
-        )} {...props}>
+        <h2 className={cn("font-normal tracking-tight text-center text-balance", className)} {...props}>
             {children}
         </h2>
-    )
+    );
 }
 
 export { ThinSectionTitle };

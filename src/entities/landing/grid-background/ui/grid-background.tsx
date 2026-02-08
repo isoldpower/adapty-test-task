@@ -1,17 +1,17 @@
-import { cn } from "@shared/lib/utils.ts";
+import { cn } from "@shared/lib/utilities";
 
 interface GridBackgroundProps {
     className?: string;
-    variant?: 'default' | 'subtle' | 'dense';
+    variant?: "default" | "subtle" | "dense";
     opacity?: number;
 }
 
 function GridBackground({ 
     className, 
-    variant = 'default',
+    variant = "default",
     opacity = 0.03
 }: GridBackgroundProps) {
-    const gridSize = variant === 'dense' ? 20 : variant === 'subtle' ? 40 : 32;
+    const gridSize = variant === "dense" ? 20 : variant === "subtle" ? 40 : 32;
     
     return (
         <div 
@@ -21,10 +21,10 @@ function GridBackground({
             )}
             style={{
                 backgroundImage: `
-                    linear-gradient(to right, rgb(0 0 0 / ${opacity}) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgb(0 0 0 / ${opacity}) 1px, transparent 1px)
+                    linear-gradient(to right, rgb(0 0 0 / ${opacity.toString()}) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgb(0 0 0 / ${opacity.toString()}) 1px, transparent 1px)
                 `,
-                backgroundSize: `${gridSize}px ${gridSize}px`,
+                backgroundSize: `${gridSize.toString()}px ${gridSize.toString()}px`,
             }}
         />
     );

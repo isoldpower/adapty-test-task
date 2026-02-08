@@ -1,8 +1,9 @@
 import { useCallback } from "react";
-import { List } from "@shared/ui-toolkit";
+
 import { ItemsGroup } from "@entities/landing/containers";
 import { DefaultHeading } from "@entities/landing/typography";
 import { InTextLinkHover } from "@features/landing/hover-animations";
+import { List } from "@shared/ui-toolkit";
 
 
 interface Label {
@@ -37,10 +38,10 @@ function EnterpriseAdvantage({
             orientation="vertical"
             className="gap-4 pl-12 py-6 border-l-2 border-purple-600 md:first:border-none"
         >
-            <DefaultHeading heading='h4' className="font-bold text-foreground">
+            <DefaultHeading heading='h3' className="font-bold text-foreground">
                 {feature.title}
             </DefaultHeading>
-            <List className="text-[1.4rem] md:text-2xl text-gray-700 flex flex-col gap-4">
+            <List className="text-2xl text-gray-700 flex flex-col gap-4">
                 {feature.labels.map((item) => getRelatedChild(item))}
             </List>
         </ItemsGroup>

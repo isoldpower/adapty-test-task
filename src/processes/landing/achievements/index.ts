@@ -1,1 +1,1 @@
-export { AchievementsSection } from './ui/achievements-section.tsx';
+export { AchievementsSection } from "./ui/achievements-section.tsx";

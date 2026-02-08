@@ -1,4 +1,5 @@
-import { cn } from "@shared/lib/utils.ts";
+import { cn } from "@shared/lib/utilities";
+
 import type { BaseHTMLAttributes } from "react";
 
 type ParagraphTextProps = BaseHTMLAttributes<HTMLParagraphElement>;
@@ -12,7 +13,7 @@ function ParagraphText({
         <p className={cn("text-lg lg:text-2xl leading-normal lg:leading-relaxed", className)} {...props}>
             {children}
         </p>
-    )
+    );
 }
 
 export { ParagraphText };

@@ -1,9 +1,10 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card } from "@shared/ui-toolkit/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@shared/ui-toolkit/tabs"
-import { CodeBlock } from "@shared/ui-toolkit/code-block"
+import { useState } from "react";
+
+import { Card } from "@shared/ui-toolkit/card";
+import { CodeBlock } from "@shared/ui-toolkit/code-block";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@shared/ui-toolkit/tabs";
 
 const CODE_EXAMPLES = {
   ios: `import PaywallSDK
@@ -76,16 +77,16 @@ const result = await PaywallSDK.presentPaywall({
 if (result.purchased) {
   console.log('Success:', result.product.id);
 }`,
-}
+};
 
 export function SdkCodeViewer() {
-  const [selectedPlatform, setSelectedPlatform] = useState<keyof typeof CODE_EXAMPLES>("ios")
+  const [selectedPlatform, setSelectedPlatform] = useState<keyof typeof CODE_EXAMPLES>("ios");
 
   return (
     <Card className="overflow-hidden border-2">
       <Tabs
         value={selectedPlatform}
-        onValueChange={(value) => setSelectedPlatform(value as keyof typeof CODE_EXAMPLES)}
+        onValueChange={(value) => { setSelectedPlatform(value as keyof typeof CODE_EXAMPLES); }}
       >
         <TabsList className="w-full justify-start rounded-none border-b bg-muted/30 p-0">
           <TabsTrigger value="ios" className="rounded-none data-[state=active]:bg-background">
@@ -114,5 +115,5 @@ export function SdkCodeViewer() {
         ))}
       </Tabs>
     </Card>
-  )
+  );
 }

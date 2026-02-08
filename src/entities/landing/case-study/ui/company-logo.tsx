@@ -1,4 +1,5 @@
-import { cn } from "@shared/lib/utils.ts";
+import { cn } from "@shared/lib/utilities";
+
 import type { ImgHTMLAttributes } from "react";
 
 type CompanyLogoProps = ImgHTMLAttributes<HTMLImageElement>;

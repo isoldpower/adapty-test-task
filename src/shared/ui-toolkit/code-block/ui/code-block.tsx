@@ -1,8 +1,9 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@shared/ui-toolkit/button"
-import { Check, Copy } from "lucide-react"
+import { Check, Copy } from "lucide-react";
+import { useState } from "react";
+
+import { Button } from "@shared/ui-toolkit/button";
 
 interface CodeBlockProps {
   code: string
@@ -10,13 +11,16 @@ interface CodeBlockProps {
 }
 
 export function CodeBlock({ code, language = "typescript" }: CodeBlockProps) {
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied] = useState(false);
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(code)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
+        .catch((error: unknown) => {
+            console.error("Failed to copy text to clipboard:", error);
+        });
+    setCopied(true);
+    setTimeout(() => { setCopied(false); }, 2000);
+  };
 
   return (
     <div className="relative">
@@ -27,5 +31,5 @@ export function CodeBlock({ code, language = "typescript" }: CodeBlockProps) {
         <code className={`language-${language}`}>{code}</code>
       </pre>
     </div>
-  )
+  );
 }

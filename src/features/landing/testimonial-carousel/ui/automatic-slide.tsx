@@ -1,5 +1,6 @@
-import { useCarouselContext } from "@shared/ui-toolkit";
 import { useCallback, useEffect } from "react";
+
+import { useCarouselContext } from "@shared/ui-toolkit";
 
 import type { PropsWithChildren } from "react";
 
@@ -33,7 +34,7 @@ function CarouselAutomaticSlide({
 
         return () => {
             clearTimeout(timer);
-        }
+        };
     }, [handleTimerTrigger, timeout]);
 
     return children;

@@ -1,1 +1,1 @@
-export { TrustBadgesSection } from './ui/trust-badges-section.tsx';
+export { TrustBadgesSection } from "./ui/trust-badges-section.tsx";

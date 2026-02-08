@@ -1,16 +1,17 @@
-import { cn } from "@shared/lib/utils.ts";
+import { cn } from "@shared/lib/utilities";
+
 import type { BaseHTMLAttributes } from "react";
 
-type Orientation = 'direct' | 'backward';
+type Orientation = "direct" | "backward";
 
-type FooterDividerProps = Omit<BaseHTMLAttributes<HTMLDivElement>, 'children'> & {
+type FooterDividerProps = Omit<BaseHTMLAttributes<HTMLDivElement>, "children"> & {
     orientation: Orientation;
 };
 
 const dividerVariants: Record<Orientation, string> = {
     direct: "mt-6 mb-l sm:mt-xs sm:mb-m",
     backward: "mb-6 mt-l sm:mb-xs sm:mt-m"
-}
+};
 
 function FooterDivider({
     className,

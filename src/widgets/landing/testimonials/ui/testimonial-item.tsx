@@ -1,8 +1,8 @@
+import { TextMediaGroup } from "@entities/landing/containers";
 import { ResponsivePicture } from "@entities/landing/responsive-picture";
 import { BigImageContainer } from "@entities/landing/testimonial";
 
 import type { CEOTestimonial } from "../types.ts";
-import { TextMediaGroup } from "@entities/landing/containers";
 
 
 interface CEOTestimonialItemProps {
@@ -19,25 +19,25 @@ function CEOTestimonialItem({
                     alt={testimonial.author + "'s avatar"}
                     className="rounded-lg object-cover"
                     sources={[
-                        { srcSet: testimonial.avatar.src, type: 'image/webp' },
+                        { srcSet: testimonial.avatar.src, type: "image/webp" },
                     ]}
                     {...testimonial.avatar}
                 />
             </BigImageContainer>
             <div className="flex flex-col items-start gap-8">
-                <p className="text-lg sm:text-2xl md:text-2xl lg:text-3xl leading-relaxed text-gray-900">
+                <p className="text-white text-[1.6rem] lg:text-3xl leading-relaxed">
                     "{testimonial.quote}"
                 </p>
                 <div>
-                    <p className="text-3xl font-semibold text-gray-900">
+                    <p className="text-white text-[1.6rem] lg:text-3xl font-semibold">
                         {testimonial.author}
                     </p>
-                    <p className="text-gray-600">{testimonial.role}</p>
+                    <p className="text-gray-400">{testimonial.role}</p>
                 </div>
                 <img
                     src={testimonial.logoSrc}
                     alt="Company logo"
-                    className="h-16 w-auto object-contain bg-a-black-light-x2 p-4 rounded-lg"
+                    className="h-10 w-auto object-contain"
                 />
             </div>
         </TextMediaGroup>

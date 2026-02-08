@@ -1,5 +1,6 @@
+import { cn } from "@shared/lib/utilities";
+
 import type { BaseHTMLAttributes } from "react";
-import { cn } from "@shared/lib/utils.ts";
 
 type TrustedCompanyHoverProps = BaseHTMLAttributes<HTMLDivElement>;
 

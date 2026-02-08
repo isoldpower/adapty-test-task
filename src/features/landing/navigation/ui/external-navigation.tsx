@@ -1,6 +1,6 @@
 import type { AnchorHTMLAttributes } from "react";
 
-type ExternalNavigationProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'rel' | 'target'>;
+type ExternalNavigationProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "rel" | "target">;
 
 function ExternalNavigation({
     children,

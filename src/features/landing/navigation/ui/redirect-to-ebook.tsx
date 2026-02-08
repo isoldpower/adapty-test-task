@@ -1,7 +1,8 @@
-import type { AnchorHTMLAttributes } from "react";
-import { cn } from "@shared/lib/utils.ts";
+import { cn } from "@shared/lib/utilities";
 
-type RedirectToEbookProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>;
+import type { AnchorHTMLAttributes } from "react";
+
+type RedirectToEbookProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href">;
 
 function RedirectToEbook({
     children,

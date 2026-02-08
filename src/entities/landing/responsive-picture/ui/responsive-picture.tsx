@@ -1,4 +1,4 @@
-import {cn} from "@shared/lib/utils.ts";
+import { cn } from "@shared/lib/utilities";
 
 interface ImageSource {
     media?: string;
@@ -16,9 +16,9 @@ interface ResponsivePictureProps {
     pictureClassName?: string;
     pictureId?: string;
     imgId?: string;
-    loading?: 'lazy' | 'eager';
-    fetchPriority?: 'high' | 'low' | 'auto';
-    decoding?: 'async' | 'sync' | 'auto';
+    loading?: "lazy" | "eager";
+    fetchPriority?: "high" | "low" | "auto";
+    decoding?: "async" | "sync" | "auto";
     draggable?: boolean;
     style?: React.CSSProperties;
 }
@@ -29,13 +29,13 @@ function ResponsivePicture({
     alt,
     width,
     height,
-    className = '',
-    pictureClassName = '',
+    className = "",
+    pictureClassName = "",
     pictureId,
     imgId,
-    loading = 'lazy',
-    fetchPriority = 'auto',
-    decoding = 'async',
+    loading = "lazy",
+    fetchPriority = "auto",
+    decoding = "async",
     draggable = false,
     style
 }: ResponsivePictureProps) {
@@ -46,7 +46,7 @@ function ResponsivePicture({
                     key={index}
                     media={source.media}
                     srcSet={source.srcSet}
-                    type={source.type ?? 'image/webp'}
+                    type={source.type ?? "image/webp"}
                 />
             ))}
             <img

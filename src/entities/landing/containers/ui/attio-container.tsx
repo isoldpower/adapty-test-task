@@ -1,5 +1,6 @@
+import { cn } from "@shared/lib/utilities";
 import { Container } from "@shared/ui-toolkit";
-import { cn } from "@shared/lib/utils.ts";
+
 import type { ReactNode } from "react";
 
 
@@ -17,7 +18,7 @@ function AttioContainer({
         <Container className={cn("max-w-full w-[1100px] flex flex-col mx-auto items-start", className)} {...props}>
             {children}
         </Container>
-    )
+    );
 };
 
 export { AttioContainer };

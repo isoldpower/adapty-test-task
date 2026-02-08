@@ -1,16 +1,17 @@
-import { cn } from "@shared/lib/utils.ts";
+import { cn } from "@shared/lib/utilities";
+
 import type { ReactNode } from "react";
 
 interface FeatureBlockProps {
     children: ReactNode;
     className?: string;
-    variant?: 'default' | 'elevated' | 'bordered' | 'gradient';
+    variant?: "default" | "elevated" | "bordered" | "gradient";
 }
 
 function FeatureBlock({ 
     children, 
     className,
-    variant = 'default'
+    variant = "default"
 }: FeatureBlockProps) {
     const variants = {
         default: "bg-white border border rounded-2xl p-6 sm:p-8 transition-shadow",

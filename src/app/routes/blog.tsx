@@ -1,6 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
-import { blogLoader, BlogPageAdaptyLazy } from "@pages/blog";
+import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
+
+import { blogLoader, BlogPageAdaptyLazy } from "@pages/blog";
 
 
 const searchSchema = z.object({
@@ -9,7 +10,7 @@ const searchSchema = z.object({
 
 type BlogSearchParams = z.infer<typeof searchSchema>;
 
-export const Route = createFileRoute('/blog')({
+export const Route = createFileRoute("/blog")({
     component: BlogPageAdaptyLazy,
     validateSearch: searchSchema,
     loaderDeps: ({ search }) => ({

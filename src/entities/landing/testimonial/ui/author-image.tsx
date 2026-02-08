@@ -1,8 +1,9 @@
+import { cn } from "@shared/lib/utilities";
+
 import type { ImgHTMLAttributes } from "react";
-import { cn } from "@shared/lib/utils.ts";
 
 
-type AuthorImage = Omit<ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt'> & {
+type AuthorImage = Omit<ImgHTMLAttributes<HTMLImageElement>, "src" | "alt"> & {
     avatar: string;
 };
 

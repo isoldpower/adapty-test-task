@@ -1,14 +1,15 @@
 import { Link, useLoaderData, useSearch } from "@tanstack/react-router";
-import { CompanyBlogPost } from "@widgets/blog/posts-grid/ui/company-blog-post.tsx";
+
 import { buildImageUrl } from "@app/sanity-cms";
+import { CompanyBlogPost } from "@widgets/blog/posts-grid/ui/company-blog-post.tsx";
 
 
 function PaginatedBlogsList() {
     const searchParams = useSearch({
-        from: '/blog'
+        from: "/blog"
     });
-    const {postPreviews, postsMeta} = useLoaderData({
-        from: '/blog'
+    const { postPreviews, postsMeta } = useLoaderData({
+        from: "/blog"
     });
 
     return (
@@ -29,11 +30,11 @@ function PaginatedBlogsList() {
                 ))}
             </div>
             <div className='w-full flex justify-center items-center gap-2'>
-                {Array.from({length: postsMeta.pages}).map((_, index) => (
+                {Array.from({ length: postsMeta.pages }).map((_, index) => (
                     <Link
                         resetScroll={false}
                         to='.'
-                        search={(prev) => ({...prev, page: index + 1})}
+                        search={(prev) => ({ ...prev, page: index + 1 })}
                         replace
                         aria-selected={index === searchParams.page - 1}
                         key={index}

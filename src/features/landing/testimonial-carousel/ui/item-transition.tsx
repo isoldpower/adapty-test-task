@@ -1,5 +1,6 @@
+import { cn } from "@shared/lib/utilities";
 import { useCarouselContext } from "@shared/ui-toolkit";
-import { cn } from "@shared/lib/utils.ts";
+
 import type { BaseHTMLAttributes } from "react";
 
 type TestimonialCarouselItemTransitionProps = BaseHTMLAttributes<HTMLDivElement> & {
@@ -17,7 +18,7 @@ function TestimonialCarouselItemTransition({
     return (
         <div
             className={cn(
-                "ease-linear w-full",
+                "ease-linear",
                 index === currentIndex ? "opacity-100 relative" : "opacity-0 absolute pointer-events-none",
                 className
             )}

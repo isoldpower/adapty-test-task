@@ -1,15 +1,16 @@
-'use client';
+"use client";
 
+import { ArrowRight } from "lucide-react";
 import { useCallback, useState } from "react";
+
+import { cn } from "@shared/lib/utilities";
 import { Button } from "@shared/ui-toolkit/button";
-import { ArrowRight } from "lucide-react"
-import { cn } from "@shared/lib/utils.ts";
 
 import type { ComponentProps, FormHTMLAttributes } from "react";
 
 
-type EmailCaptureFormProps = Omit<FormHTMLAttributes<HTMLFormElement>, 'onSubmit'> & {
-    buttonProps?: Omit<ComponentProps<typeof Button>, 'type'>;
+type EmailCaptureFormProps = Omit<FormHTMLAttributes<HTMLFormElement>, "onSubmit"> & {
+    buttonProps?: Omit<ComponentProps<typeof Button>, "type">;
 };
 
 function EmailCaptureForm({
@@ -22,10 +23,10 @@ function EmailCaptureForm({
     } = {},
     ...props
 }: EmailCaptureFormProps) {
-    const [isSubmitted, setIsSubmitted] = useState(false)
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleSubmit = useCallback((e: React.FormEvent) => {
-        e.preventDefault()
+        e.preventDefault();
 
         const formData = new FormData(e.target as HTMLFormElement);
 
@@ -33,7 +34,7 @@ function EmailCaptureForm({
         setIsSubmitted(true);
         setTimeout(() => {
             setIsSubmitted(false);
-        }, 3000)
+        }, 3000);
     }, []);
 
     return (

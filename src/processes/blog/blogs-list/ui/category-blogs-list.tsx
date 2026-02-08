@@ -1,13 +1,14 @@
 import { useLoaderData } from "@tanstack/react-router";
-import { CenteredGroup } from "@entities/landing/containers";
 import { ChevronRightIcon } from "lucide-react";
-import { CategoryBasedPost } from "@widgets/blog/posts-grid/ui/category-based-post.tsx";
+
 import { buildImageUrl } from "@app/sanity-cms";
+import { CenteredGroup } from "@entities/landing/containers";
+import { CategoryBasedPost } from "@widgets/blog/posts-grid/ui/category-based-post.tsx";
 
 
 function CategoryBlogsList() {
     const { categoriesList } = useLoaderData({
-        from: '/blog'
+        from: "/blog"
     });
 
     return (

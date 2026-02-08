@@ -1,12 +1,13 @@
-import {cn} from "@shared/lib/utils.ts";
-import type {ButtonHTMLAttributes} from "react";
+import { cn } from "@shared/lib/utilities";
 
-type ButtonVariant = 'primary' | 'secondary';
+import type { ButtonHTMLAttributes } from "react";
+
+type ButtonVariant = "primary" | "secondary";
 
 const buttonVariants: Record<ButtonVariant, string> = {
     primary: "bg-a-primary text-a-primary-foreground border-a-primary hover:bg-a-primary/90",
     secondary: "bg-transparent border-white text-white hover:bg-white/10",
-}
+};
 
 type FooterCtaButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     variant?: ButtonVariant;
@@ -14,7 +15,7 @@ type FooterCtaButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 }
 
 function FooterCtaButton({
-    variant = 'primary',
+    variant = "primary",
     children,
     className,
     ...props

@@ -1,10 +1,11 @@
-import { ArrowRight } from "lucide-react"
-import { Button } from "@shared/ui-toolkit";
-import { LevitatingPaper } from "@entities/landing/papers";
-import { ItemsGroup } from "@entities/landing/containers";
+import { ArrowRight } from "lucide-react";
+
 import { CompanyLogo } from "@entities/landing/case-study";
+import { ItemsGroup } from "@entities/landing/containers";
+import { LevitatingPaper } from "@entities/landing/papers";
 import { MutedLabel, ParagraphText } from "@entities/landing/typography";
 import { ExternalNavigation } from "@features/landing/navigation";
+import { Button } from "@shared/ui-toolkit";
 
 
 interface CaseStudyCard {
@@ -26,7 +27,7 @@ function CaseStudyCard({
     caseStudy: { company, description, result, href }
 }: CaseStudyCardProps) {
     return (
-        <LevitatingPaper className='shadow-none! border'>
+        <LevitatingPaper>
             <ItemsGroup className="min-h-full justify-between gap-4">
                 <ItemsGroup orientation="horizontal" className="gap-4 mb-2">
                     <CompanyLogo

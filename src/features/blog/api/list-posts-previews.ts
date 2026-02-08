@@ -1,10 +1,11 @@
 import { sanityClient } from "@app/sanity-cms/client.ts";
+
 import type { SanityDocument } from "@sanity/client";
 import type { SanityImageSource } from "@sanity/image-url";
 
 
 interface ListPostsPreviewsOptions {
-    order: 'asc' | 'desc';
+    order: "asc" | "desc";
     limit: number;
     pageSize: number;
     page: number;
@@ -39,23 +40,23 @@ const listPostsPreviews = async ({
    page
 }: ListPostsPreviewsOptions): Promise<ListPostsPreviewsResponse> => {
     const paginationChunk = `[${(page * pageSize).toString()}...${(page * pageSize + limit).toString()}]`;
-    const sourceChunk = `*[_type == "post" && defined(slug.current)]`;
+    const sourceChunk = "*[_type == \"post\" && defined(slug.current)]";
     const orderChunk = `order(publishedAt ${order})`;
     const requestedFields = [
-        `_id`,
-        `title`,
-        `publishedAt`,
-        `"category": category[]->title`,
-        `"slug": slug.current`,
-        `image->{ src, alt }`,
-        `author->{ name, image, bio }`,
-        `"readingTime": round(length(pt::text(body)) / 5 / 180)`
+        "_id",
+        "title",
+        "publishedAt",
+        "\"category\": category[]->title",
+        "\"slug\": slug.current",
+        "image->{ src, alt }",
+        "author->{ name, image, bio }",
+        "\"readingTime\": round(length(pt::text(body)) / 5 / 180)"
     ];
 
     return sanityClient.fetch<ListPostsPreviewsResponse>(
-        `${sourceChunk}|${orderChunk}${paginationChunk}{${requestedFields.join(', ')}}`
+        `${sourceChunk}|${orderChunk}${paginationChunk}{${requestedFields.join(", ")}}`
     );
-}
+};
 
 export { listPostsPreviews };
 export type { ListPostsPreviewsOptions, ListPostsPreviewsResponse };

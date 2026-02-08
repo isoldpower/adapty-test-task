@@ -1,11 +1,13 @@
+import { useCallback } from "react";
+
 import { TextAndMediaGroup } from "@entities/landing/containers";
 import { ResponsivePicture } from "@entities/landing/responsive-picture";
-import { TestimonialCard as TestimonialCardWidget } from "@widgets/landing/testimonials";
 import { ProductBenefitText } from "@widgets/landing/product-benefit";
+import { TestimonialCard as TestimonialCardWidget } from "@widgets/landing/testimonials";
+
 import { benefitsList } from "../config/benefits-list.ts";
 
 import type { BenefitItem } from "../config/benefits-list.ts";
-import { useCallback } from "react";
 
 function TestimonialCard({
     testimonial,
@@ -30,14 +32,13 @@ function ProductBenefitsSection() {
     }, []);
 
     return (
-        <div className="flex flex-col gap-32 w-full">
+        <div className="flex flex-col gap-48">
             {benefitsList.map(({ testimonial, ...benefit }, index) => (
-                <TextAndMediaGroup breakEarly reversed={index % 2 === 1}>
+                <TextAndMediaGroup key={index} reversed={index % 2 === 1}>
                     {getOrderedChildren(index, [
                         <TestimonialCard testimonial={testimonial} {...benefit} />,
                         <ResponsivePicture
-                            style={{backgroundColor: benefit.media.background, borderRadius: '12px'}}
-                            className="max-h-[400px] w-full object-contain"
+                            style={{ backgroundColor: benefit.media.background, borderRadius: "12px" }}
                             {...benefit.media}
                         />
                     ])}

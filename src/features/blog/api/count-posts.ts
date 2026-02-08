@@ -14,12 +14,12 @@ const countPosts = async ({
     pageSize
 }: CountPostsOptions): Promise<CountPostsResponse> => {
     const total = await sanityClient.fetch<number>(
-        `count(*[_type == "post" && defined(slug.current)])`
+        "count(*[_type == \"post\" && defined(slug.current)])"
     );
     const pages = Math.ceil(total / pageSize);
 
     return { total, pages };
-}
+};
 
 export { countPosts };
 export type { CountPostsResponse };

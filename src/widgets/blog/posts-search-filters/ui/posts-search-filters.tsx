@@ -1,10 +1,12 @@
-import { Input } from "@shared/ui-toolkit";
-import { useCallback, useState } from "react";
-import { CenteredGroup } from "@entities/landing/containers";
 import { ArrowDown } from "lucide-react";
+import { useCallback, useState } from "react";
+
+import { CenteredGroup } from "@entities/landing/containers";
+import { Input } from "@shared/ui-toolkit";
+
 
 function PostsSearchFilters() {
-    const [searchTerm, setSearchTerm] = useState<string>('');
+    const [searchTerm, setSearchTerm] = useState<string>("");
     const handleSearchChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);
     }, []);
@@ -32,7 +34,7 @@ function PostsSearchFilters() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export { PostsSearchFilters };

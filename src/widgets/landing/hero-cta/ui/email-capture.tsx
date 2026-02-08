@@ -1,9 +1,9 @@
-import { Input } from "@shared/ui-toolkit";
 import { EmailCaptureForm } from "@features/landing/email-capture";
+import { Input } from "@shared/ui-toolkit";
 
 function HeroEmailCapture() {
     return (
-        <EmailCaptureForm className="w-full">
+        <EmailCaptureForm>
             <Input
                 type="email"
                 placeholder="Email address"

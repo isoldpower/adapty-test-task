@@ -2,9 +2,9 @@ const enterpriseFeatures = [
     {
         title: "Secure",
         labels: [
-            {label: "SOC2 verified"},
-            {label: "Encrypted"},
-            {label: "24/7 global fraud monitoring"}
+            { label: "SOC2 verified" },
+            { label: "Encrypted" },
+            { label: "24/7 global fraud monitoring" }
         ]
     },
     {

@@ -1,6 +1,7 @@
-import type { ComponentProps, SVGAttributes } from "react";
+import { cn } from "@shared/lib/utilities";
 import { Card } from "@shared/ui-toolkit";
-import { cn } from "@shared/lib/utils.ts";
+
+import type { ComponentProps, SVGAttributes } from "react";
 
 type QuoteIconProps = SVGAttributes<SVGElement>;
 
@@ -20,24 +21,30 @@ function QuoteIcon({
     );
 }
 
-type TestimonialPaperProps = ComponentProps<typeof Card>;
+type TestimonialPaperProps = ComponentProps<typeof Card> & {
+    negative?: boolean;
+};
 
 function TestimonialPaper({
     children,
     className,
+    negative = false,
     ...props
 }: TestimonialPaperProps) {
     return (
         <Card
             className={cn(
-                "border! shadow-none! bg-transparent rounded-2xl p-4 lg:p-10 relative",
+                "border rounded-2xl p-4 lg:p-10 relative",
+                negative ? "border-neutral-300" : "border-neutral-700",
                 className
             )}
             {...props}
         >
             <QuoteIcon className={cn(
-                "absolute -top-4 z-10 p-2 mb-6 lg:-top-6",
-                "text-neutral-700"
+                "absolute -top-4 z-10 p-2 mb-6 lg:-top-5",
+                negative
+                    ? "bg-a-bg-accent text-a-bg-website"
+                    : "bg-a-bg-website text-a-bg-accent"
             )} />
             {children}
         </Card>

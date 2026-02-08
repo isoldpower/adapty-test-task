@@ -1,3 +1,4 @@
+import { InlineGroup } from "@entities/landing/containers";
 import {
     AdaptyIcon,
     DiscordIcon,
@@ -7,15 +8,14 @@ import {
     XIcon,
     YoutubeIcon
 } from "@entities/landing/website-footer";
-import { InlineGroup } from "@entities/landing/containers";
 
 const socialsIcons = [
-    { Icon: XIcon, key: 'x' },
-    { Icon: LinkedInIcon, key: 'linkedin' },
-    { Icon: DiscordIcon, key: 'discord' },
-    { Icon: GithubIcon, key: 'github' },
-    { Icon: YoutubeIcon, key: 'youtube' },
-]
+    { Icon: XIcon, key: "x" },
+    { Icon: LinkedInIcon, key: "linkedin" },
+    { Icon: DiscordIcon, key: "discord" },
+    { Icon: GithubIcon, key: "github" },
+    { Icon: YoutubeIcon, key: "youtube" },
+];
 
 function FooterSocialsWidget() {
     return (

@@ -1,5 +1,5 @@
-import { DefaultHeading } from "@entities/landing/typography";
 import { InlineGroup } from "@entities/landing/containers";
+import { DefaultHeading } from "@entities/landing/typography";
 import { FooterCtaButton } from "@entities/landing/website-footer";
 
 function FooterHeadingWidget() {

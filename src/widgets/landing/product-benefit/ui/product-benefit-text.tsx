@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
-import type {PropsWithChildren} from "react";
+
+import type { PropsWithChildren } from "react";
 
 type ProductBenefitTextProps = PropsWithChildren<{
     title: string

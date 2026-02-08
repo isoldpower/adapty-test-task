@@ -1,8 +1,9 @@
 import { cloneElement, useMemo } from "react";
+
 import type { BaseHTMLAttributes, ReactElement } from "react";
 
 
-type HeadingType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+type HeadingType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 type AttributesType = BaseHTMLAttributes<HTMLHeadingElement>;
 
 type DefaultHeadingProps = AttributesType & {

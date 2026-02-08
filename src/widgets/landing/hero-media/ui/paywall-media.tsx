@@ -1,6 +1,7 @@
 import { ResponsivePicture } from "@entities/landing/responsive-picture";
+import { cn } from "@shared/lib/utilities";
+
 import { paywallSources } from "../config/media-sources";
-import { cn } from "@shared/lib/utils.ts";
 
 
 function HeroPaywallMedia() {

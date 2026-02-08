@@ -1,49 +1,24 @@
-import { createRootRoute, HeadContent, Scripts, Outlet } from '@tanstack/react-router'
-import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
+import { createRootRoute } from "@tanstack/react-router";
 
-import type { PropsWithChildren } from "react";
+import mainCss from "@app/style/globals.css?url";
+import shadcnCss from "@app/style/shadcn.css?url";
 
-import mainCss from '@app/style/globals.css?url'
+import { RootLayout } from "../root-layout.tsx";
 
 
 export const Route = createRootRoute({
     component: RootLayout,
     head: () => ({
         meta: [
-            { charSet: 'utf-8' },
-            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { title: 'The Best Solution to Grow Mobile In-App Purchases | Adapty' },
+            { charSet: "utf-8" },
+            { name: "viewport", content: "width=device-width, initial-scale=1" },
+            { title: "The Best Solution to Grow Mobile In-App Purchases | Adapty" },
         ],
         links: [
-            { rel: 'preload', href: mainCss, as: 'style' },
-            { rel: 'stylesheet', href: mainCss },
+            { rel: "preload", href: shadcnCss, as: "style" },
+            { rel: "stylesheet", href: shadcnCss },
+            { rel: "preload", href: mainCss, as: "style" },
+            { rel: "stylesheet", href: mainCss },
         ]
     })
 });
-
-function RootLayout () {
-    return (
-        <RootDocument>
-            <main className="min-h-screen max-w-screen overflow-x-hidden bg-a-bg-website text-a-text-website">
-                <Outlet />
-            </main>
-            {import.meta.env.DEV ? (
-                <TanStackRouterDevtools initialIsOpen={false} position='bottom-left'/>
-            ) : null}
-        </RootDocument>
-    );
-}
-
-function RootDocument({ children }: Readonly<PropsWithChildren<object>>) {
-    return (
-        <html>
-            <head>
-                <HeadContent />
-            </head>
-            <body>
-                {children}
-                <Scripts />
-            </body>
-        </html>
-    );
-}

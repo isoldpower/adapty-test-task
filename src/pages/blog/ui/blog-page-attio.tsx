@@ -2,7 +2,7 @@ import { useLoaderData } from "@tanstack/react-router";
 
 export function BlogPageAttio() {
     const { postPreviews } = useLoaderData({
-        from: '/blog'
+        from: "/blog"
     });
 
     return (

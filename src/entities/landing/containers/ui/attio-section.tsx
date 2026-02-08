@@ -1,14 +1,16 @@
-import type { BaseHTMLAttributes } from "react";
-import { cn } from "@shared/lib/utils.ts";
+
 import { GridBackground } from "@entities/landing/grid-background";
 import { InteractiveGridBackground } from "@entities/landing/interactive-grid-background";
+import { cn } from "@shared/lib/utilities";
 
-type SectionVariant = 'default' | 'subtle' | 'muted' | 'grid' | 'hero' | 'feature';
+import type { BaseHTMLAttributes } from "react";
+
+type SectionVariant = "default" | "subtle" | "muted" | "grid" | "hero" | "feature";
 
 type AttioSectionProps = BaseHTMLAttributes<HTMLElement> & {
     variant?: SectionVariant;
     showGrid?: boolean;
-    gridVariant?: 'default' | 'subtle' | 'dense';
+    gridVariant?: "default" | "subtle" | "dense";
     interactiveGrid?: boolean;
     gridOpacity?: number;
 };
@@ -20,19 +22,19 @@ const sectionVariants: Record<SectionVariant, string> = {
     grid: "bg-white text-foreground",
     hero: "bg-gradient-to-b from-white via-gray-50/30 to-white text-foreground",
     feature: "bg-gradient-to-br from-gray-50 via-white to-gray-50/50 text-foreground",
-}
+};
 
 function AttioSection({
     children,
     className,
-    variant = 'default',
+    variant = "default",
     showGrid = false,
-    gridVariant = 'default',
+    gridVariant = "default",
     interactiveGrid = false,
     gridOpacity,
     ...props
 }: AttioSectionProps) {
-    const shouldShowGrid = showGrid || variant === 'grid' || variant === 'hero' || variant === 'feature';
+    const shouldShowGrid = showGrid || variant === "grid" || variant === "hero" || variant === "feature";
 
     return (
         <section className={cn(
@@ -55,7 +57,7 @@ function AttioSection({
                 {children}
             </div>
         </section>
-    )
+    );
 }
 
 export { AttioSection };

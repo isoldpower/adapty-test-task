@@ -1,7 +1,8 @@
-import type { BaseHTMLAttributes } from "react";
-import { cn } from "@shared/lib/utils.ts";
+import { cn } from "@shared/lib/utilities";
 
-type SectionVariant = 'warm' | 'cold' | 'default' | 'accent';
+import type { BaseHTMLAttributes } from "react";
+
+type SectionVariant = "warm" | "cold" | "default" | "accent";
 
 type AdaptySectionProps = BaseHTMLAttributes<HTMLElement> & {
     variant?: SectionVariant;
@@ -12,12 +13,12 @@ const sectionVariants: Record<SectionVariant, string> = {
     cold: "bg-a-bg-cold text-foreground",
     default: "bg-a-bg-website text-foreground",
     accent: "bg-a-bg-accent text-accent-foreground",
-}
+};
 
 function AdaptySection({
     children,
     className,
-    variant = 'default',
+    variant = "default",
     ...props
 }: AdaptySectionProps) {
     return (
@@ -32,7 +33,7 @@ function AdaptySection({
         )} {...props}>
             {children}
         </section>
-    )
+    );
 }
 
 export { AdaptySection };

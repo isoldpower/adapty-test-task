@@ -1,9 +1,9 @@
+import { CenteredGroup } from "@entities/landing/containers";
+import { TestimonialCarouselDot } from "@entities/landing/testimonials-carousel";
 import {
     TestimonialCarouselPaginationDot,
     TestimonialCarouselPaginationDotTransition
 } from "@features/landing/testimonial-carousel";
-import { CenteredGroup } from "@entities/landing/containers";
-import { TestimonialCarouselDot } from "@entities/landing/testimonials-carousel";
 
 import type { CEOTestimonial } from "../types";
 

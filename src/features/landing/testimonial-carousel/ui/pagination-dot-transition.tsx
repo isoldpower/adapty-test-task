@@ -1,5 +1,6 @@
+import { cn } from "@shared/lib/utilities";
 import { useCarouselContext } from "@shared/ui-toolkit";
-import { cn } from "@shared/lib/utils.ts";
+
 import type { BaseHTMLAttributes } from "react";
 
 type TestimonialCarouselPaginationDotTransitionProps = BaseHTMLAttributes<HTMLDivElement> & {

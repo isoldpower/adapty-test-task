@@ -1,9 +1,10 @@
 import { sanityClient } from "@app/sanity-cms/client.ts";
+
 import type { SanityDocument } from "@sanity/client";
 
 
 interface ListCategoriesOptions {
-    order?: 'asc' | 'desc';
+    order?: "asc" | "desc";
     size: number
 }
 
@@ -16,22 +17,22 @@ type ListCategoriesResponseItem = SanityDocument<{
 type ListCategoriesResponse = ListCategoriesResponseItem[];
 
 const listCategories = async ({
-    order = 'desc',
+    order = "desc",
     size
 }: ListCategoriesOptions): Promise<ListCategoriesResponse> => {
     const paginationChunk = `[0...${size.toString()}]`;
-    const sourceChunk = `*[_type == "category" && defined(slug.current)]`;
+    const sourceChunk = "*[_type == \"category\" && defined(slug.current)]";
     const orderChunk = `order(publishedAt ${order})`;
     const requestedFields = [
-        `_id`,
-        `title`,
-        `"slug": slug.current`
+        "_id",
+        "title",
+        "\"slug\": slug.current"
     ];
 
     return sanityClient.fetch<ListCategoriesResponse>(
-        `${sourceChunk}|${orderChunk}${paginationChunk}{${requestedFields.join(', ')}}`
+        `${sourceChunk}|${orderChunk}${paginationChunk}{${requestedFields.join(", ")}}`
     );
-}
+};
 
 export { listCategories };
 export type { ListCategoriesResponseItem, ListCategoriesOptions, ListCategoriesResponse };

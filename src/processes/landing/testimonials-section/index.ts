@@ -1,1 +1,1 @@
-export { CEOTestimonialsSection } from './ui/ceo-testimonials-section.tsx';
+export { CEOTestimonialsSection } from "./ui/ceo-testimonials-section.tsx";

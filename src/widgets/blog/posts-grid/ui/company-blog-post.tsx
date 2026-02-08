@@ -1,5 +1,5 @@
-import { Card } from "@shared/ui-toolkit";
 import { MutedLabel } from "@entities/landing/typography";
+import { Card } from "@shared/ui-toolkit";
 
 
 interface CompanyBlogPostProps {
@@ -20,10 +20,10 @@ interface CompanyBlogPostProps {
 function CompanyBlogPost({
     post
 }: CompanyBlogPostProps) {
-    const literalPublishedAt = new Date(post.publishedAt).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
+    const literalPublishedAt = new Date(post.publishedAt).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
     });
 
     return (
@@ -37,7 +37,7 @@ function CompanyBlogPost({
                     className="rounded-t-2xl w-full max-w-[100%] object-cover"
                 />
                 <div className="p-xs md:p-[calc(var(--space-xs)+2px)] uppercase font-thin text-[1.2rem]! text-muted-foreground mb-[0.4rem] mt-[0.2rem]">
-                    {post.category.join(', ')}
+                    {post.category.join(", ")}
                 </div>
                 <h3 className="line-clamp-4 px-4 text-[1.6rem] sm:text-[calc(var(--h3)-10px] md:text-[calc(var(--h3)-7px)] lg:text-[calc(var(--h3)-4px)] mb-5">
                     {post.title}

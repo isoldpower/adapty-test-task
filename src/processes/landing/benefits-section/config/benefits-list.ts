@@ -37,7 +37,7 @@ const benefitsList: BenefitItem[] = [
             ],
             alt: "Paywall A/B testing",
             src: "https://adapty.io/assets/uploads/2025/05/paywall-ab-testing@2x.webp",
-            background: 'rgb(39, 97, 80)'
+            background: "rgb(39, 97, 80)"
         },
         title: "Increase subscription revenue without app releases",
         description: "Manage, target, localize and personalize paywalls without leaving your browser.",
@@ -63,7 +63,7 @@ const benefitsList: BenefitItem[] = [
             ],
             alt: "Refund Rate",
             src: "https://adapty.io/assets/uploads/2025/05/refund-rate@2x-768x576.webp",
-            background: 'rgb(207, 235, 227)'
+            background: "rgb(207, 235, 227)"
         },
         title: "Cut refund rate by 40%",
         description: "Stop losing revenue on refunds – Adapty automatically shares user activity data with Apple for refund requests and reduces it.",
@@ -91,7 +91,7 @@ const benefitsList: BenefitItem[] = [
             ],
             alt: "App Monetization Strategies",
             src: "https://adapty.io/assets/uploads/2024/01/app-monetization-strategies@2x.webp",
-            background: 'rgb(192, 175, 253)'
+            background: "rgb(192, 175, 253)"
         },
         title: "Know your subscription numbers at any moment",
         description: "Measure your in-app economy from trials to refunds with a ready-to-go, real-time subscription BI.",
@@ -119,7 +119,7 @@ const benefitsList: BenefitItem[] = [
             ],
             alt: "No Code Paywall Builder",
             src: "https://adapty.io/assets/uploads/2024/01/no-code-paywall-builder@2x.webp",
-            background: 'rgb(255, 206, 199)'
+            background: "rgb(255, 206, 199)"
         },
         title: "No-code paywall builder",
         description: "Build beautiful native paywalls for iOS, Android, Flutter, and React Native without a dev team.",
@@ -147,7 +147,7 @@ const benefitsList: BenefitItem[] = [
             ],
             alt: "FunnelFox",
             src: "https://adapty.io/assets/uploads/2025/04/funnelfox-feature@2x-768x631.webp",
-            background: 'rgb(240,240,240)'
+            background: "rgb(240,240,240)"
         },
         title: "Boost app revenue fast with web funnels",
         description: "Build and launch web-to-app funnels, integrate payments, optimize with A/B testing and scale globally — all in one platform, no coding needed.",

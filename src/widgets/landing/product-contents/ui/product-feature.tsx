@@ -1,13 +1,13 @@
-import { ResponsivePicture } from "@entities/landing/responsive-picture";
 import { ArrowRight } from "lucide-react";
 
 import { FlexContainerGroup, InlineGroup } from "@entities/landing/containers";
-import { DefaultHeading, MutedLabel } from "@entities/landing/typography";
 import { FeatureLabelPaper, ProductFeaturePaper } from "@entities/landing/papers";
+import { ResponsivePicture } from "@entities/landing/responsive-picture";
+import { DefaultHeading, MutedLabel } from "@entities/landing/typography";
 import { RedirectToFeatureDocs } from "@features/landing/navigation";
+
 import type { ImageSource } from "@entities/landing/responsive-picture";
 import type { FeatureType } from "@features/landing/navigation";
-import {cn} from "@shared/lib/utils.ts";
 
 interface ProductFeatureBlockProps {
     image: {
@@ -18,7 +18,6 @@ interface ProductFeatureBlockProps {
     title: string;
     hrefType: FeatureType;
     labels: string[];
-    large?: boolean;
 }
 
 function ProductFeatureBlock({
@@ -26,7 +25,6 @@ function ProductFeatureBlock({
    title,
    hrefType,
    labels,
-    large = false
 }: ProductFeatureBlockProps) {
     return (
         <ProductFeaturePaper>
@@ -37,31 +35,20 @@ function ProductFeatureBlock({
                     height={396}
                     width={707}
                     alt={image.alt}
-                    className={cn("mb-6")}
+                    className="mb-6"
                 />
                 <div className='px-8 py-4 gap-4 flex flex-col items-center'>
                     <InlineGroup breakpoint='all' gap={4}>
-                        <DefaultHeading heading={large ? 'h2' : 'h5'}>
+                        <DefaultHeading heading='h4'>
                             {title}
                         </DefaultHeading>
-                        <ArrowRight className={cn(
-                            "transition-transform group-hover:translate-x-1",
-                            large ? "size-8" : "size-6"
-                        )} />
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </InlineGroup>
 
-                    <FlexContainerGroup className="text-center justify-center gap-2">
+                    <FlexContainerGroup className="text-center gap-2">
                         {labels.map((label) => (
-                            <FeatureLabelPaper
-                                key={label}
-                                className={cn(
-                                    "px-4 py-2",
-                                    !large && "w-full text-clip max-w-full md:max-w-[calc(50%-2*var(--spacing))] line-clamp-1"
-                                )}
-                            >
-                                <MutedLabel className={cn(!large && "text-lg! leading-[150%]")}>
-                                    {label}
-                                </MutedLabel>
+                            <FeatureLabelPaper key={label} className="px-4 py-2">
+                                <MutedLabel>{label}</MutedLabel>
                             </FeatureLabelPaper>
                         ))}
                     </FlexContainerGroup>

@@ -1,16 +1,16 @@
-import { cn } from "@shared/lib/utils.ts";
+import { cn } from "@shared/lib/utilities";
 
 interface DirectionalLinesProps {
     className?: string;
-    variant?: 'default' | 'subtle';
+    variant?: "default" | "subtle";
 }
 
 function DirectionalLines({ 
     className,
-    variant = 'default'
+    variant = "default"
 }: DirectionalLinesProps) {
-    const opacity = variant === 'subtle' ? 0.15 : 0.3;
-    const strokeColor = variant === 'subtle' ? `rgb(255 255 255 / ${opacity})` : `rgb(0 0 0 / ${opacity})`;
+    const opacity = variant === "subtle" ? 0.15 : 0.3;
+    const strokeColor = variant === "subtle" ? `rgb(255 255 255 / ${opacity.toString()})` : `rgb(0 0 0 / ${opacity.toString()})`;
     const lineLength = 30;
     const spacing = 60;
     

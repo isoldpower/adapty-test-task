@@ -1,1 +1,1 @@
-export { SdkPlatformCard } from "./ui/sdk-platform-card"
+export { SdkPlatformCard } from "./ui/sdk-platform-card";

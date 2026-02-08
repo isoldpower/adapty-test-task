@@ -1,15 +1,17 @@
-import { useBreakpointsMapping } from "@shared/lib";
 import { FooterNavGrid, InlineGroup, ItemsGroup } from "@entities/landing/containers";
+import { MutedLabel } from "@entities/landing/typography";
 import { FooterDivider } from "@entities/landing/website-footer";
+import { useBreakpointsMapping } from "@shared/lib/hooks";
 import {
     FooterHeadingWidget,
     FooterLanguageSelect,
     FooterLinkGroup,
     FooterSocialsWidget
 } from "@widgets/landing/website-footer";
+
 import { footerLinks } from "../config/footer-links.ts";
 import { languageList } from "../config/language-list.tsx";
-import { MutedLabel } from "@entities/landing/typography";
+
 
 
 function FooterSection() {
@@ -20,7 +22,7 @@ function FooterSection() {
         md: 3,
         lg: 4,
         xl: 5,
-        '2xl': 5
+        "2xl": 5
     });
 
     return (
@@ -32,7 +34,7 @@ function FooterSection() {
                 <FooterDivider orientation='direct' />
                 <FooterNavGrid
                     maxColumns={maxNavColumns}
-                    className="w-full text-accent-foreground"
+                    className="w-full"
                 >
                     {Object.entries(footerLinks).map(([title, links]) => (
                         <FooterLinkGroup section={{ title, links }} key={title} />

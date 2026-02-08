@@ -1,1 +1,1 @@
-export { CodeBlock } from "./ui/code-block"
+export { CodeBlock } from "./ui/code-block";

@@ -1,1 +1,1 @@
-export { Input } from "../@shadcn/ui/input"
+export { Input } from "../@shadcn/ui/input";

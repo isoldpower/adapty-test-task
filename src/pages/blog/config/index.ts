@@ -6,4 +6,4 @@ interface BlogPageConfig {
 export const blogPageConfig: BlogPageConfig = {
     postsPerPage: 12,
     blogDocumentTitle: "post"
-}
+};

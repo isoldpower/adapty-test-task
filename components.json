@@ -5,10 +5,10 @@
   "tsx": true,
   "tailwind": {
     "config": "tailwind.config.ts",
-    "css": "@app/style/globals.css",
+    "css": "./src/app/style/shadcn.css",
     "baseColor": "neutral",
     "cssVariables": true,
-    "prefix": ""
+    "prefix": "cn"
   },
   "aliases": {
     "components": "@shared/ui-toolkit/@shadcn",

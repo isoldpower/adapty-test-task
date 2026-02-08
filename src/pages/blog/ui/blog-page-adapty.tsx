@@ -1,9 +1,8 @@
 import { AdaptyContainer, AdaptySection } from "@entities/landing/adapty-section";
 import { DefaultHeading } from "@entities/landing/typography";
-import { EbookCtaPost, FeaturedBlogPost } from "@widgets/blog/featured-posts";
-import { PaginatedBlogsList } from "@processes/blog/blogs-list/ui/paginated-blogs-list.tsx";
 import { CategoryBlogsList } from "@processes/blog/blogs-list";
-import { FooterSection } from "@processes/landing/footer-section";
+import { PaginatedBlogsList } from "@processes/blog/blogs-list/ui/paginated-blogs-list.tsx";
+import { EbookCtaPost, FeaturedBlogPost } from "@widgets/blog/featured-posts";
 import { PostsSearchFilters } from "@widgets/blog/posts-search-filters/ui/posts-search-filters.tsx";
 
 
@@ -28,9 +27,9 @@ export function BlogPageAdapty() {
                             readTime='8 min read'
                             image='https://adapty.io/assets/uploads/2025/12/native-vs-hybrid-apps.png'
                             author={{
-                                image: 'https://secure.gravatar.com/avatar/c65ab2f3e99a34c5360d4eecef2ae594e986b33647203ae83934630d1fd7ed8a?s=150&d=mm&r=g',
-                                name: 'Victoria Kharlan',
-                                quote: 'Lessons I wish I had. Now yours.'
+                                image: "https://secure.gravatar.com/avatar/c65ab2f3e99a34c5360d4eecef2ae594e986b33647203ae83934630d1fd7ed8a?s=150&d=mm&r=g",
+                                name: "Victoria Kharlan",
+                                quote: "Lessons I wish I had. Now yours."
                             }}
                         />
                     </div>
@@ -47,11 +46,6 @@ export function BlogPageAdapty() {
             <AdaptySection variant='default'>
                 <AdaptyContainer>
                     <CategoryBlogsList />
-                </AdaptyContainer>
-            </AdaptySection>
-            <AdaptySection variant='accent'>
-                <AdaptyContainer>
-                    <FooterSection />
                 </AdaptyContainer>
             </AdaptySection>
         </>

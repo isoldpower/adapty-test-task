@@ -1,8 +1,9 @@
 import { useRouter, useMatch, rootRouteId } from "@tanstack/react-router";
 import { useCallback } from "react";
+
 import { MutedLabel } from "@entities/landing/typography";
 
-import type { PropsWithChildren} from "react";
+import type { PropsWithChildren } from "react";
 
 
 type NotFoundProps = PropsWithChildren<object>;
@@ -17,10 +18,10 @@ export function DefaultNotFoundBoundary({
     });
 
     const handleHomeNavigation = useCallback(() => {
-        router.navigate({ to: '/' })
+        router.navigate({ to: "/" })
             .catch((error: unknown) => {
-                console.error('Home Navigation Error:', error);
-            })
+                console.error("Home Navigation Error:", error);
+            });
     }, [router]);
 
     return (

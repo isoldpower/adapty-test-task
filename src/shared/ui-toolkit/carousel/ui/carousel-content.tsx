@@ -1,4 +1,5 @@
 import { Children, useEffect } from "react";
+
 import { useCarouselContext } from "@shared/ui-toolkit";
 
 import type { ReactNode } from "react";

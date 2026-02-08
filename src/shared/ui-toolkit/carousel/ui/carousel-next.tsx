@@ -1,6 +1,8 @@
-import {cloneElement, useCallback} from "react";
+import { cloneElement, useCallback } from "react";
+
+import { useCarouselContext } from "@shared/ui-toolkit";
+
 import type { ReactElement } from "react";
-import {useCarouselContext} from "@shared/ui-toolkit";
 
 
 interface CarouselNextProps {

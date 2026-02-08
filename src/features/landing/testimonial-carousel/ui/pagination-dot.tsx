@@ -1,5 +1,7 @@
-import { useCarouselContext } from "@shared/ui-toolkit";
 import { useCallback } from "react";
+
+import { useCarouselContext } from "@shared/ui-toolkit";
+
 import type { ButtonHTMLAttributes } from "react";
 
 type TestimonialCarouselPaginationDotProps = ButtonHTMLAttributes<HTMLButtonElement> & {

@@ -1,5 +1,7 @@
 import { ResponsivePicture } from "@entities/landing/responsive-picture";
-import { cn } from "@shared/lib/utils.ts";
+import { cn } from "@shared/lib/utilities";
+
+
 import { overviewSources } from "../config/media-sources";
 
 

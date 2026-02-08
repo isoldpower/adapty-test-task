@@ -1,5 +1,6 @@
-import type {BaseHTMLAttributes} from "react";
-import {cn} from "@shared/lib/utils.ts";
+import { cn } from "@shared/lib/utilities";
+
+import type { BaseHTMLAttributes } from "react";
 
 type IconContainerProps = BaseHTMLAttributes<HTMLDivElement>;
 

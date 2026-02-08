@@ -1,1 +1,1 @@
-export { ProductBenefitText } from './ui/product-benefit-text.tsx';
+export { ProductBenefitText } from "./ui/product-benefit-text.tsx";
